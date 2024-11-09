@@ -2,6 +2,16 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { BiErrorAlt } from "react-icons/bi";
+import { TiUserAdd } from "react-icons/ti";
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -105,34 +115,54 @@ const Landing = () => {
         </div>
         <img src="./lost-found.png" className="w-80 h-80"></img>
       </div>
-      <div className="bg-black h-1 mx-24 mb-20">.</div>
-      <div className="bg-gray-400 flex gap-36 md:gap-64">
+      <div className="bg-gray-200 flex px-48 p-10 flex-col xl:flex-row gap-5 justify-between mb-20 mx-24 md:mx-48 rounded-xl items-center">
         <div>
-
-        </div>
-        <div>
-
-        </div>
-      </div>
-      <div className="flex justify-center gap-36 md:gap-64">
-        <div className="bg-purple-900 items-center gap-3 mb-20 flex text-white p-10 rounded-xl hover:bg-white hover:text-purple-900 hover: border border-purple-900 font-bold text-6xl">
-              <div>
+          <Card>
+            <div className="flex items-center text-6xl gap-3 text-purple-900 border p-5 rounded-lg hover:shadow-lg hover:scale-105 transition-all hover:border-purple-600 hover:bg-purple-200">
+            <div>
               <MdOutlineContentPasteSearch />
-              </div>
-              <div className="text-xl">
-                <div>1000</div>
-                <div className="text-md text-gray-300 font-medium text-sm hover:text-gray-500">Lost and Found cases</div>
-              </div>
+            </div>
+            <CardHeader>
+              <CardTitle>1000</CardTitle>
+              <CardDescription className="text-purple-900">Lost and Found Cases</CardDescription>
+            </CardHeader>
+            </div>
+          </Card>
         </div>
-        <div className="bg-purple-900 items-center gap-3 mb-20 flex text-white p-10 rounded-xl hover:bg-white hover:text-purple-900 hover: border border-purple-900 font-bold text-6xl">
+        <div>
+        <Card>
+            <div className="flex items-center text-6xl gap-3 text-purple-900 border p-5 rounded-lg hover:shadow-lg hover:scale-105 transition-all hover:border-purple-600 hover:bg-purple-200">
             <div>
             <FaUsers />
             </div>
-            <div className="text-xl">
-              <div>1000</div>
-              <div className="text-md text-gray-300 font-medium text-sm hover:text-gray-500">Users</div>
+            <CardHeader>
+              <CardTitle>1000</CardTitle>
+              <CardDescription className="text-purple-900">Users</CardDescription>
+            </CardHeader>
             </div>
+          </Card>
         </div>
+      </div>
+      <div className="bg-black h-1 mx-24 mb-20">.</div>
+      <h1 className="font-bold text-3xl text-center mb-10">How  to  start ?</h1>
+      <div className="flex justify-center flex-col xl:flex-row gap-32 mx-32 md:mx-56 mb-20">
+        <Card className="flex flex-col justify-center items-center gap-5 p-5 pt-10">
+            <div className="p-3 text-5xl rounded-full bg-purple-900 text-white">
+            <TiUserAdd />
+            </div>
+              <h1 className="font-bold text-xl">Step 1: Register with us</h1>
+              <p className="px-10">Don't know how to deal with lost or found items
+ near you? Register with your name and email address
+.If you have registered already, you can use the same
+ account for posting unlimited ads.</p>
+        </Card>
+        <Card className="flex flex-col justify-center items-center gap-5 p-5 pt-10">
+            <div className="p-3 text-5xl rounded-full bg-purple-900 text-white">
+            <BiErrorAlt />
+            </div>
+              <h1 className="font-bold text-xl">Step 2: Start Reporting</h1>
+              <p className="px-10">"Lost or found something? Post here to claim or return items to their rightful owners. Let’s reunite lost items with their owners!"</p>
+        </Card>
       </div>
     </>
   );
