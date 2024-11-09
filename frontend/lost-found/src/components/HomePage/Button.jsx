@@ -2,9 +2,9 @@ import React from 'react';
 
 const Button = ({ buttonText }) => {
     return (
-        <div className="group inline-block relative cursor-pointer text-black text-xl">
+        <div className="group inline-block relative cursor-pointer text-black text-xl font-bold hover:text-[#B542D8]">
             {buttonText}
-            <div className="absolute left-0 bottom-0 w-0 h-1 bg-white transition-all duration-300 group-hover:w-full group-hover:text-white"></div>
+            <div className="absolute left-0 bottom-0 w-0 h-1 bg-[#B542D8] transition-all duration-300 group-hover:w-full group-hover:text-[#B542D8]"></div>
         </div>
     )
 }
