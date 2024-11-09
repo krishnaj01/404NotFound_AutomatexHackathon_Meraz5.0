@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ buttonText }) => {
+const Buttons = ({ buttonText }) => {
     return (
         <div className="group inline-block relative cursor-pointer text-black text-xl font-bold hover:text-[#B542D8]">
             {buttonText}
@@ -9,4 +9,4 @@ const Button = ({ buttonText }) => {
     )
 }
 
-export default Button;
+export default Buttons;
