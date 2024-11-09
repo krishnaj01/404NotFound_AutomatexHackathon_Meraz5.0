@@ -1,9 +1,15 @@
 import firebase from 'firebase/app';
 
 class Form{
-    constructor(email, name, contact, title, date, description, location){
+    static Types = { // Defining the enum as a static property for type property of the form
+        LOST: 'lost',
+        FOUND: 'found'
+    };
+
+    constructor(email, name, type, contact, title, date, description, location){
         this.email=String(email);
         this.name=String(name);
+        this.type=type;
         this.contact=Number(contact);
         this.title=String(title);
         this.date=firebase.firestore.FieldValue.serverTimestamp();
@@ -14,6 +20,7 @@ class Form{
     isValid() {
         return typeof this.email === 'string' &&
                typeof this.name === 'string' &&
+               Object.values(Form.Types).includes(this.type) &&
                typeof this.contact === 'number' &&
                typeof this.title === 'string' &&
                this.date instanceof firebase.firestore.Timestamp &&
