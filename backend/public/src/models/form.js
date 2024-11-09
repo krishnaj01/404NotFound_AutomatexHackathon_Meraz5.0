@@ -9,8 +9,8 @@ class Form{
     constructor(email, name, type, contact, title, date, description, location){
         this.email=String(email);
         this.name=String(name);
-        this.type=type;
         this.contact=Number(contact);
+        this.type=type;
         this.title=String(title);
         this.date=firebase.firestore.FieldValue.serverTimestamp();
         this.description=String(description);
