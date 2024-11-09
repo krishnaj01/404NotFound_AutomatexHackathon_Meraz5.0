@@ -105,13 +105,23 @@ const Landing = () => {
         </div>
         <img src="./lost-found.png" className="w-80 h-80"></img>
       </div>
-      <div className="flex justify-center gap-36 md:gap-96">
+      <div className="bg-black h-1 mx-24 mb-20">.</div>
+      <div className="bg-gray-400 flex gap-36 md:gap-64">
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+      </div>
+      <div className="flex justify-center gap-36 md:gap-64">
         <div className="bg-purple-900 items-center gap-3 mb-20 flex text-white p-10 rounded-xl hover:bg-white hover:text-purple-900 hover: border border-purple-900 font-bold text-6xl">
               <div>
               <MdOutlineContentPasteSearch />
               </div>
               <div className="text-xl">
-                1000
+                <div>1000</div>
+                <div className="text-md text-gray-300 font-medium text-sm hover:text-gray-500">Lost and Found cases</div>
               </div>
         </div>
         <div className="bg-purple-900 items-center gap-3 mb-20 flex text-white p-10 rounded-xl hover:bg-white hover:text-purple-900 hover: border border-purple-900 font-bold text-6xl">
@@ -119,11 +129,11 @@ const Landing = () => {
             <FaUsers />
             </div>
             <div className="text-xl">
-              1000
+              <div>1000</div>
+              <div className="text-md text-gray-300 font-medium text-sm hover:text-gray-500">Users</div>
             </div>
         </div>
       </div>
-      <div className="bg-black h-1 mx-24">.</div>
     </>
   );
 };
