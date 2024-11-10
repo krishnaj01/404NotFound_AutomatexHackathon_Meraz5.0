@@ -1,20 +1,24 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
+// import { createRequire } from "module";
+// const require = createRequire(import.meta.url);
 
-const express = require('express');
-const db = require('../firebaseConfig.js');
-const {Form} = require('../models/form.js');
-const checkUser = require('../middleware/checkUser');
-const {validateFormData} = require('../validation/validateForm.js');
+// const express = require('express');
+import express from 'express';
+import {db} from '../public/firebaseConfig.js';
+import Form from '../models/form.js';
+import checkUser from '../middleware/checkUser.js';
+import validateFormData from '../validation/validateForm.js';
 
-import { collection, getDocs } from "firebase/firestore";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc } from "firebase/firestore";
+// import { collection, addDoc } from "firebase/firestore";
 
 const router = express.Router();
+
+router.use(express.json());
 
 //show all cards
 router.get('/show', async (req, res) => {
     try {
+        res.send("Hello")
         const querySnapshot = await getDocs(collection(db, "forms"));
         querySnapshot.forEach((doc) => {
             console.log(doc.id, " => ", doc.data());
@@ -41,4 +45,5 @@ router.post('/new', async (req, res) => {
     }
 });
 
-module.exports = router;
+// module.exports = router;
+export default router;

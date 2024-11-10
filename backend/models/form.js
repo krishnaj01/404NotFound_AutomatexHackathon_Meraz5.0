@@ -1,4 +1,4 @@
-const firebase = require('firebase/app');
+// import firebase from 'firebase/app';
 
 class Form{
     static Types = { // Defining the enum as a static property for type property of the form
@@ -27,6 +27,6 @@ class Form{
                typeof this.description === 'string' &&
                typeof this.location === 'string';
     }
-} 
+};
 
-module.exports = Form;
+export default Form;

@@ -10,4 +10,5 @@ function validateFormData(formData) {
     return true;
   };
   
-module.exports = validateFormData;
+// module.exports = validateFormData;
+export default validateFormData;
