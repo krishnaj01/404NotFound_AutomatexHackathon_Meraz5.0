@@ -1,0 +1,24 @@
+// components/ProfileStats.js
+import React from 'react';
+
+function ProfileStats() {
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-xl w-full max-w-xs sm:max-w-sm lg:w-[350px] space-y-6">
+      <h3 className="text-xl font-semibold text-purple-800">Profile Stats</h3>
+      <Stat label="Followers" value="2,340" />
+      <Stat label="Found Items" value="52" />
+      <Stat label="Lost Items" value="8" />
+    </div>
+  );
+}
+
+function Stat({ label, value }) {
+  return (
+    <div className="flex justify-between text-gray-600">
+      <p className="font-semibold">{label}</p>
+      <p className="font-semibold">{value}</p>
+    </div>
+  );
+}
+
+export default ProfileStats;
