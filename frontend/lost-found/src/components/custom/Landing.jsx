@@ -33,6 +33,8 @@ const Landing = () => {
     onError: (error) => console.log(error),
   });
 
+  const allowedDomain = "iitbhilai.ac.in";
+
   const GetUserProfile = async (tokenInfo) => {
     const accessToken = tokenInfo?.access_token;
 
@@ -52,9 +54,19 @@ const Landing = () => {
         }
       );
 
+      const userEmail = res.data.email;
+    const userDomain = userEmail.split("@")[1];
+
+    // Check if the user email domain matches the allowed domain
+    if (userDomain === allowedDomain) {
       localStorage.setItem("user", JSON.stringify(res.data));
       setOpenDialog(false);
-      window.location.replace("/create-trip");
+      window.location.replace("/home");
+    } else {
+      console.error("Unauthorized domain");
+      alert("Sign in is restricted to users from iitbhilai.ac.in domain.");
+      googleLogout();
+    }
     } catch (err) {
       console.error("Error fetching user profile:", err);
     }
@@ -62,7 +74,7 @@ const Landing = () => {
 
   return (
     <>
-      <div className="flex items-center mx-24 md:mx-48 gap-5 flex-col-reverse md:flex-row">
+      <div className="flex items-center mx-24 md:mx-48 gap-5 flex-col-reverse xl:flex-row">
         <div className="flex flex-col items-center gap-9 mb-16">
           <h1 className="font-extrabold text-[60px] text-center mt-16">
             <div className="text-[#b542da]">Lost Something ?</div> We are here
@@ -78,7 +90,7 @@ const Landing = () => {
             </p>
           </div>
 
-          <Link to={!user ? "/" : "/create-trip"}>
+          <Link to={!user ? "/" : "/home"}>
             <Button
               onClick={() => {
                 setOpenDialog(true);
@@ -115,53 +127,61 @@ const Landing = () => {
         </div>
         <img src="./lost-found.png" className="w-80 h-80"></img>
       </div>
-      <div className="bg-gray-200 flex px-48 p-10 flex-col xl:flex-row gap-5 justify-between mb-20 mx-24 md:mx-48 rounded-xl items-center">
+      <div className="bg-gray-200 flex px-24 md:px-48 p-10 flex-col xl:flex-row gap-5 justify-between mb-20 mx-24 md:mx-48 rounded-xl items-center">
         <div>
           <Card>
-            <div className="flex items-center text-6xl gap-3 text-purple-900 border p-5 rounded-lg hover:shadow-lg hover:scale-105 transition-all hover:border-purple-600 hover:bg-purple-200">
-            <div>
-              <MdOutlineContentPasteSearch />
-            </div>
-            <CardHeader>
-              <CardTitle>1000</CardTitle>
-              <CardDescription className="text-purple-900">Lost and Found Cases</CardDescription>
-            </CardHeader>
+            <div className="flex flex-col md:flex-row items-center text-6xl gap-3 text-purple-900 border p-5 rounded-lg hover:shadow-lg hover:scale-105 transition-all hover:border-purple-600 hover:bg-purple-200">
+              <div>
+                <MdOutlineContentPasteSearch />
+              </div>
+              <CardHeader>
+                <CardTitle>1000</CardTitle>
+                <CardDescription className="text-purple-900">
+                  Lost and Found Cases
+                </CardDescription>
+              </CardHeader>
             </div>
           </Card>
         </div>
         <div>
-        <Card>
-            <div className="flex items-center text-6xl gap-3 text-purple-900 border p-5 rounded-lg hover:shadow-lg hover:scale-105 transition-all hover:border-purple-600 hover:bg-purple-200">
-            <div>
-            <FaUsers />
-            </div>
-            <CardHeader>
-              <CardTitle>1000</CardTitle>
-              <CardDescription className="text-purple-900">Users</CardDescription>
-            </CardHeader>
+          <Card>
+            <div className="flex flex-col md:flex-row items-center text-6xl gap-3 text-purple-900 border p-5 rounded-lg hover:shadow-lg hover:scale-105 transition-all hover:border-purple-600 hover:bg-purple-200">
+              <div>
+                <FaUsers />
+              </div>
+              <CardHeader>
+                <CardTitle>1000</CardTitle>
+                <CardDescription className="text-purple-900">
+                  Users
+                </CardDescription>
+              </CardHeader>
             </div>
           </Card>
         </div>
       </div>
       <div className="bg-black h-1 mx-24 mb-20">.</div>
-      <h1 className="font-bold text-3xl text-center mb-10">How  to  start ?</h1>
-      <div className="flex justify-center flex-col xl:flex-row gap-32 mx-32 md:mx-56 mb-20">
-        <Card className="flex flex-col justify-center items-center gap-5 p-5 pt-10">
-            <div className="p-3 text-5xl rounded-full bg-purple-900 text-white">
+      <h1 className="font-bold text-3xl text-center mb-10">How to start ?</h1>
+      <div className="flex justify-center flex-col xl:flex-row gap-32 mx-24 md:mx-56 mb-20">
+        <Card className="flex flex-col justify-center items-center gap-5 p-5 pt-10 hover:shadow-lg hover:scale-105 transition-all hover:border-purple-600">
+          <div className="p-3 text-5xl rounded-full bg-purple-900 text-white">
             <TiUserAdd />
-            </div>
-              <h1 className="font-bold text-xl">Step 1: Register with us</h1>
-              <p className="px-10">Don't know how to deal with lost or found items
- near you? Register with your name and email address
-.If you have registered already, you can use the same
- account for posting unlimited ads.</p>
+          </div>
+          <h1 className="font-bold text-xl">Step 1: Register with us</h1>
+          <p className="px-10">
+            Don't know how to deal with lost or found items near you? Register
+            with your name and email address .If you have registered already,
+            you can use the same account for posting unlimited ads.
+          </p>
         </Card>
-        <Card className="flex flex-col justify-center items-center gap-5 p-5 pt-10">
-            <div className="p-3 text-5xl rounded-full bg-purple-900 text-white">
+        <Card className="flex flex-col justify-center items-center gap-5 p-5 pt-10 hover:shadow-lg hover:scale-105 transition-all hover:border-purple-600">
+          <div className="p-3 text-5xl rounded-full bg-purple-900 text-white">
             <BiErrorAlt />
-            </div>
-              <h1 className="font-bold text-xl">Step 2: Start Reporting</h1>
-              <p className="px-10">"Lost or found something? Post here to claim or return items to their rightful owners. Let’s reunite lost items with their owners!"</p>
+          </div>
+          <h1 className="font-bold text-xl">Step 2: Start Reporting</h1>
+          <p className="px-10">
+            "Lost or found something? Post here to claim or return items to
+            their rightful owners. Let’s reunite lost items with their owners!"
+          </p>
         </Card>
       </div>
     </>

@@ -3,10 +3,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <HeaderImage />
-      <SearchSection />
-      <CardList />
+      Hii
     </div>
   )
 }
