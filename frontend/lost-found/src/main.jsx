@@ -8,6 +8,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import Landing from './components/custom/Landing';
 import LandingHeader from './components/custom/LandingHeader';
 import Home from './components/HomePage/Home';
+import Footer from './components/custom/Footer';
 
 const route = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')).render(
       <LandingHeader/>
       <Toaster />
       <RouterProvider router={route} />
+      <Footer />
     </GoogleOAuthProvider>
   </StrictMode>,
 );

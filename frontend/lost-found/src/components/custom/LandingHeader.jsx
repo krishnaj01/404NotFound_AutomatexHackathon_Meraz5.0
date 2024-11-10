@@ -7,6 +7,8 @@ import {
 } from "@/components/ui/popover";
 import { IoMdHome } from "react-icons/io";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
+import { FaQuestion } from "react-icons/fa";
+import { FaInfo } from "react-icons/fa";
 import {
   Dialog,
   DialogContent,
@@ -15,7 +17,7 @@ import {
 } from "@/components/ui/dialog";
 import axios from "axios";
 import { FcGoogle } from "react-icons/fc";
-import Buttons from "../HomePage/Button";
+import Buttons from "../HomePage/Buttons";
 import { TbCircleLetterLFilled } from "react-icons/tb";
 import { TbCircleLetterFFilled } from "react-icons/tb";
 
@@ -83,22 +85,23 @@ const LandingHeader = () => {
           </div>
         ) : (
           <div className="flex items-center justify-between h-16 sm:h-[10vh] px-4 sm:px-8 shadow-sm">
-            <div className="flex space-x-40 w-full sm:w-[40%] justify-center">
+            <div className="flex space-x-16 lg:space-x-24 xl:space-x-40 w-full sm:w-[40%] justify-center">
               <Buttons buttonText="Home" />
-              <Buttons buttonText="Lost" />
+              <Buttons buttonText="About" />
+              <Buttons buttonText="FAQs" />
             </div>
 
-            <div className="flex justify-center w-[15%] sm:w-[10%]">
+            <div className="flex justify-center w-[15%] sm:w-[10%] hover:scale-150 transition-all">
               <img src="/logo.png" alt="logo" className="h-10 sm:h-10" />
             </div>
 
-            <div className="flex space-x-40 w-full sm:w-[40%] justify-center">
+            <div className="flex space-x-16 lg:space-x-24 xl:space-x-40 w-full sm:w-[40%] justify-center">
+              <Buttons buttonText="Lost" />
               <Buttons buttonText="Found" />
               <Popover>
                 <PopoverTrigger>
                   <div>
-                    <div className="flex gap-5 items-center">
-                      <Buttons buttonText="Profile" />
+                    <div className="flex gap-3 items-center">
                       {user?.picture ? (
                         <img
                           src={user?.picture}
@@ -169,7 +172,7 @@ const LandingHeader = () => {
           </div>
         ) : (
       <div className="flex items-center justify-between h-16 px-4 sm:px-8 md:hidden">
-        <div className="flex justify-center w-[15%] sm:w-[10%]">
+        <div className="flex justify-center w-[15%] sm:w-[10%] hover:scale-150 transition-all">
           <img src="/logo.png" alt="logo" className="h-10 sm:h-10" />
         </div>
 
@@ -225,6 +228,14 @@ const LandingHeader = () => {
               <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
               <div className="text-xl"><TbCircleLetterFFilled /></div>
               <div>Found</div>
+              </div>
+              <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
+              <div className="text-xl"><FaInfo /></div>
+              <div>About</div>
+              </div>
+              <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
+              <div className="text-xl"><FaQuestion /></div>
+              <div>FAQs</div>
               </div>
               <div
                 onClick={() => {

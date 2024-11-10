@@ -12,6 +12,13 @@ import {
 import { BiErrorAlt } from "react-icons/bi";
 import { TiUserAdd } from "react-icons/ti";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -55,18 +62,18 @@ const Landing = () => {
       );
 
       const userEmail = res.data.email;
-    const userDomain = userEmail.split("@")[1];
+      const userDomain = userEmail.split("@")[1];
 
-    // Check if the user email domain matches the allowed domain
-    if (userDomain === allowedDomain) {
-      localStorage.setItem("user", JSON.stringify(res.data));
-      setOpenDialog(false);
-      window.location.replace("/home");
-    } else {
-      console.error("Unauthorized domain");
-      alert("Sign in is restricted to users from iitbhilai.ac.in domain.");
-      googleLogout();
-    }
+      // Check if the user email domain matches the allowed domain
+      if (userDomain === allowedDomain) {
+        localStorage.setItem("user", JSON.stringify(res.data));
+        setOpenDialog(false);
+        window.location.replace("/home");
+      } else {
+        console.error("Unauthorized domain");
+        alert("Sign in is restricted to users from iitbhilai.ac.in domain.");
+        googleLogout();
+      }
     } catch (err) {
       console.error("Error fetching user profile:", err);
     }
@@ -183,6 +190,67 @@ const Landing = () => {
             their rightful owners. Let’s reunite lost items with their owners!"
           </p>
         </Card>
+      </div>
+      <h1 className="font-bold text-3xl text-center mb-10">
+        Frequently Asked Questions (FAQs)
+      </h1>
+      <div className="mx-24 lg:mx-96 mb-20">
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1" className="mb-3 pb-3 ">
+            <AccordionTrigger className="hover:text-purple-600">
+              How do I search for a lost item?
+            </AccordionTrigger>
+            <AccordionContent>
+              Use the search bar or browse categories on the "Lost Items" page
+              to look for your item. You can filter by date, category, and
+              location to narrow down results.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2" className="mb-3 pb-3 ">
+            <AccordionTrigger className="hover:text-purple-600">How do I report a lost item?</AccordionTrigger>
+            <AccordionContent>
+              Go to the "Report Lost Item" page, fill out the required details
+              (e.g., item description, location, date), and submit the report.
+              This will be publicly listed to help finders identify the item.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3" className="mb-3 pb-3 ">
+            <AccordionTrigger className="hover:text-purple-600">
+              How do I report an item I found?
+            </AccordionTrigger>
+            <AccordionContent>
+              Go to the "Report Found Item" page and fill out details like item
+              description, where and when you found it, and any contact
+              information.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-4" className="mb-3 pb-3 ">
+            <AccordionTrigger className="hover:text-purple-600">
+              Is my personal information safe?
+            </AccordionTrigger>
+            <AccordionContent>
+              We only share necessary contact information, and you have control
+              over what’s visible on your listing. Please review our Privacy
+              Policy for more details.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-5" className="mb-3 pb-3 ">
+            <AccordionTrigger className="hover:text-purple-600">
+              What happens if I list something incorrectly?
+            </AccordionTrigger>
+            <AccordionContent>
+              You can update or delete your listing at any time by going to your
+              account dashboard.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-6" className="mb-3 pb-3 ">
+            <AccordionTrigger className="hover:text-purple-600">How long do listings stay up?</AccordionTrigger>
+            <AccordionContent>
+              Listings are visible for [specific time, e.g., 30 days], after
+              which they can be renewed if the item is still lost or unclaimed.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </>
   );
