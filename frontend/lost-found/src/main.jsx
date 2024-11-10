@@ -7,18 +7,17 @@ import { Toaster } from './components/ui/sonner';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import Landing from './components/custom/Landing';
 import LandingHeader from './components/custom/LandingHeader';
+import Home from './components/HomePage/Home';
+import Footer from './components/custom/Footer';
 
 const route = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [
-      {
-        path: "landing",
-        element: <Landing />,
-      },
-      // Add other routes as needed here
-    ],
+  },
+  {
+    path: "/home",
+    element: <Home />,
   },
 ]);
 
@@ -26,8 +25,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_AUTH_CLIENT_ID}>
       <LandingHeader/>
-      <RouterProvider router={route} />
       <Toaster />
+      <RouterProvider router={route} />
+      <Footer />
     </GoogleOAuthProvider>
   </StrictMode>,
 );
