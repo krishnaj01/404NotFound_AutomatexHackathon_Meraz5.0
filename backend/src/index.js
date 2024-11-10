@@ -1,7 +1,6 @@
-const express = require('express')
-// const db = require('../firebaseConfig.js');
-const {Form} = require('../models/form.js');
-const {validateFormData} = require('../validation/validateForm.js');
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const express = require('express');
 
 const app = express();
 const port = 3000;

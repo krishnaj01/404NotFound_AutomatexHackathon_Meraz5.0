@@ -1,4 +1,4 @@
-import firebase from 'firebase/app';
+const firebase = require('firebase/app');
 
 class Form{
     static Types = { // Defining the enum as a static property for type property of the form
@@ -12,7 +12,7 @@ class Form{
         this.contact=Number(contact);
         this.type=type;
         this.title=String(title);
-        this.date=firebase.firestore.FieldValue.serverTimestamp();
+        // this.date=firebase.firestore.FieldValue.serverTimestamp();
         this.description=String(description);
         this.location=String(location);
     }
@@ -23,7 +23,7 @@ class Form{
                Object.values(Form.Types).includes(this.type) &&
                typeof this.contact === 'number' &&
                typeof this.title === 'string' &&
-               this.date instanceof firebase.firestore.Timestamp &&
+            //    this.date instanceof firebase.firestore.Timestamp &&
                typeof this.description === 'string' &&
                typeof this.location === 'string';
     }
