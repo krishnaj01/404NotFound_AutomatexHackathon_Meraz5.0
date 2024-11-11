@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] bg-gray-200 mb-4 rounded-xl shadow-lg">
       <img
-        src="./Campus.jpg" // replace with your actual background image path
+        src="./campusimage.png" // replace with your actual background image path
         alt="Building"
         className="w-full h-full object-cover rounded-xl"
       />
