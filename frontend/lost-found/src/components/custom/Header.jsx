@@ -11,7 +11,7 @@ function Header() {
       />
       <div className="absolute left-[15%] transform -translate-x-1/2 sm:bottom-[-80px] md:bottom-[-100px] bottom-[-60px] bg-white rounded-full p-2 shadow-lg">
         <img
-          src="./Campus.jpg" // replace with profile icon path
+          src="/Dhruv.jpg" // replace with profile icon path
           alt="Profile Icon"
           className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full"
         />

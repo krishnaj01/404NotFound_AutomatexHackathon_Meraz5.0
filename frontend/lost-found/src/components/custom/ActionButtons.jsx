@@ -5,7 +5,7 @@ function ActionButtons() {
   return (
     <div className="mt-6 flex space-x-4 justify-center items-center w-3/5 max-w-screen-lg">
       <ActionButton icon="search-location" label="Lost" />
-      <ActionButton icon="hand-holding" label="Found" />
+      <ActionButton icon="check-circle" label="Found" />
     </div>
   );
 }

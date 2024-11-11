@@ -13,7 +13,7 @@ function ItemCards() {
 
 function ItemCard() {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-800">
+    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-400">
     {/* Flex container for image and info */}
     <div className="flex items-center space-x-6 mb-6">
       {/* Image with adjusted width */}
