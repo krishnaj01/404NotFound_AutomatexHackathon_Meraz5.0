@@ -50,7 +50,7 @@ const About = () => {
                 <h2 className="text-2xl font-semibold text-purple-800 text-center mb-6">Developers</h2>
                 <div className="flex flex-wrap justify-center gap-8">
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
-                        <img src="/pfp.jpg" alt="Report Lost Items Icon" className="w-20 h-20 mx-auto mb-4 rounded-full" />
+                        <img src="/pfp.jpg" alt="Report Lost Items Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
                         <h3 className="text-xl font-semibold text-purple-900 mb-2">Slok Tulsyan</h3>
                         <p className="text-sm text-black">Register lost belongings with a detailed description and image to improve recovery chances.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
@@ -60,7 +60,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
-                        <img src="/pfp.jpg" alt="Browse Found Items Icon" className="w-20 h-20 mx-auto mb-4 rounded-full" />
+                        <img src="/pfp.jpg" alt="Browse Found Items Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
                         <h3 className="text-xl font-semibold text-purple-900 mb-2">Siddharth Rai</h3>
                         <p className="text-sm text-black">Search through found items on campus to see if someone has already located your missing belongings.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
@@ -70,7 +70,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
-                        <img src="/pfp.jpg" alt="Claim Items Securely Icon" className="w-20 h-20 mx-auto mb-4 rounded-full" />
+                        <img src="/pfp.jpg" alt="Claim Items Securely Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
                         <h3 className="text-xl font-semibold text-purple-900 mb-2">Dhruv Chouksey</h3>
                         <p className="text-sm text-black">If you find something that belongs to you, submit a claim to verify ownership.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
@@ -80,7 +80,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
-                        <img src="/pfp.jpg" alt="User Dashboard Icon" className="w-20 h-20 mx-auto mb-4 rounded-full" />
+                        <img src="/pfp.jpg" alt="User Dashboard Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
                         <h3 className="text-xl font-semibold text-purple-900 mb-2">Krishna Jhanwar</h3>
                         <p className="text-sm text-black">View your reported and found items, along with stats and graphs of your item history.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
