@@ -22,7 +22,7 @@ const Home = () => {
               className="w-full md:w-3/4 p-3 mb-4 rounded-lg border border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 mx-auto"
             />
             <div className="overflow-y-auto max-h-[400px]"> {/* Apply vertical scrolling to CardList container */}
-              <CardList />
+              <CardList type="LostItems"/>
             </div>
           </div>
           <div className="flex-shrink-0 w-full md:w-1/2 overflow-x-auto p-3">
@@ -33,7 +33,7 @@ const Home = () => {
               className="w-full md:w-3/4 p-3 mb-4 rounded-lg border border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 mx-auto"
             />
             <div className="overflow-y-auto max-h-[400px]"> {/* Apply vertical scrolling to CardList container */}
-              <CardList />
+              <CardList type="FoundItems" />
             </div>
           </div>
         </div>
