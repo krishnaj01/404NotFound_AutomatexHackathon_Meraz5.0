@@ -215,27 +215,27 @@ const LandingHeader = () => {
                     className="h-[35px] w-[35px] rounded-full"
                   />
                 )}</div>
-              <div>Profile</div>
+              <div><a href="/faq">Profile</a></div>
               </div>
               <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
                 <div className="text-xl"><IoMdHome /></div>
-                <div>Home</div>
+                <div><a href="/home">Home</a></div>
               </div>
               <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
               <div className="text-xl"><TbCircleLetterLFilled /></div>
-              <div>Lost</div>
+              <div><a href="/lost">Lost</a></div>
               </div>
               <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
               <div className="text-xl"><TbCircleLetterFFilled /></div>
-              <div>Found</div>
+              <div><a href="/found">Found</a></div>
               </div>
               <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
               <div className="text-xl"><FaInfo /></div>
-              <div>About</div>
+              <div><a href="/about">About</a></div>
               </div>
               <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
               <div className="text-xl"><FaQuestion /></div>
-              <div>FAQs</div>
+              <div><a href="/faq">FAQs</a></div>
               </div>
               <div
                 onClick={() => {
