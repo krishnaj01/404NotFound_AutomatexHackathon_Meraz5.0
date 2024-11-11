@@ -1,20 +1,16 @@
 // components/ItemCards.js
 import React from 'react';
 
-function ItemCards() {
+function ItemCards({data}) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 w-full max-w-screen-lg px-4">
-      <ItemCard />
-      <ItemCard />
-      <ItemCard />
-      <ItemCard />
-      <ItemCard />
-      <ItemCard />
+      <ItemCard data={data} />
     </div>
   );
 }
 
-function ItemCard() {
+function ItemCard({data}) {
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg max-w-md transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-800">
     {/* Flex container for image and info */}
@@ -27,16 +23,16 @@ function ItemCard() {
       />
       {/* Info section */}
       <div className="flex flex-col text-left">
-        <h3 className="font-semibold text-black">Wallet</h3>
-        <p className="text-gray-600">User Name<br />Contact no.</p>
+        <h3 className="font-semibold text-black">{data?.userSelection.item}</h3>
+        <p className="text-gray-600">{user.name}<br />{data?.userSelection?.contact}</p>
       </div>
     </div>
     
     {/* Description and suspected place */}
     <p className="text-gray-500 text-sm mt-2">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
+      {data?.userSelection?.description}
     </p>
-    <p className="text-purple-900 font-semibold mt-4">Suspected place</p>
+    <p className="text-purple-900 font-semibold mt-4">{data?.userSelection?.place}</p>
   </div>
   
   );
