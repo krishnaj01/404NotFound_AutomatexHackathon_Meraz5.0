@@ -12,11 +12,11 @@ const Home = () => {
         />
       </div>
 
-      <div className="flex gap-8 p-4 ">
+      <div className="flex gap-8 m-10 ">
         {/* Lost Items Section */}
-        <div className="flex-1 p-4 border border-gray-200 rounded-lg">
+        <div className="flex-1 p-5 border border-gray-200 rounded-lg">
           <div className="flex justify-between items-center mb-4">
-            <div className="text-lg font-semibold text-purple-600">LOST ITEMS</div>
+            <div className="text-2xl font-bold text-purple-600">LOST ITEMS</div>
             <input
               type="text"
               placeholder="Search..."
@@ -31,7 +31,7 @@ const Home = () => {
         {/* Found Items Section */}
         <div className="flex-1 p-4 border border-gray-200 rounded-lg">
           <div className="flex justify-between items-center mb-4">
-            <div className="text-lg font-semibold text-purple-600">FOUND ITEMS</div>
+            <div className="text-2xl font-bold text-purple-600">FOUND ITEMS</div>
             <input
               type="text"
               placeholder="Search..."
