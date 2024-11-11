@@ -1,11 +1,11 @@
-import ProfileForm from './components/custom/ProfileForm'
+import Landing from './components/custom/Landing'
 
 
 function App() {
 
   return (
     <>
-      <ProfileForm/>
+      <Landing/>
     </>
   )
 }

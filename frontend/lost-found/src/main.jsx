@@ -10,6 +10,7 @@ import Home from './components/HomePage/Home';
 import Footer from './components/custom/Footer';
 import Lost from './components/custom/Lost';
 import Found from './components/custom/Found';
+import Profile from './components/custom/ProfileForm';
 
 const route = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const route = createBrowserRouter([
   {
     path: "/found",
     element: <Found />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
 ]);
 
