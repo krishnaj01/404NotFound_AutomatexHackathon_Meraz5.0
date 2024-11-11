@@ -5,7 +5,8 @@ const Buttons = ({ buttonText }) => {
 
     useEffect(() => {
         const currentPath = window.location.pathname;
-        if (currentPath === `/${buttonText.toLowerCase() === 'faqs' ? 'faq' : buttonText.toLowerCase()}`) {
+        const path = buttonText.toLowerCase();
+        if (currentPath === `/${path === 'faqs' ? 'faq' : path === 'dashboard' ? 'home' : path}`) {
             setIsActive(true);
         } else {
             setIsActive(false);
@@ -17,7 +18,7 @@ const Buttons = ({ buttonText }) => {
             className={`group inline-block relative cursor-pointer text-black text-xl font-bold ${isActive ? 'text-[#B542D8]' : 'hover:text-[#B542D8]'}`}
         >
             <a
-                href={`/${buttonText.toLowerCase() === 'faqs' ? 'faq' : buttonText.toLowerCase()}`}
+                href={`/${buttonText.toLowerCase() === 'faqs' ? 'faq' : buttonText.toLowerCase() === 'dashboard' ? 'home' : buttonText.toLowerCase()}`}
                 className={`${isActive ? 'text-[#B542D8]' : ''}`}
             >
                 {buttonText}

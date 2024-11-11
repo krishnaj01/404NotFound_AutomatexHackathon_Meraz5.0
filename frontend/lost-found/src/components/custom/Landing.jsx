@@ -132,7 +132,7 @@ const Landing = () => {
             </DialogClose>
           </Dialog>
         </div>
-        <img src="./lost-found.png" className="w-80 h-80"></img>
+        <img src="./lost-found.png" className="w-85 h-80 object-cover"></img>
       </div>
       <div className="bg-gray-200 flex px-12 sm:px-24 md:px-48 p-10 flex-col xl:flex-row gap-5 justify-between mb-20 mx-12 sm:mx-24 md:mx-48 rounded-xl items-center">
         <div>
