@@ -25,7 +25,7 @@ const Footer = () => {
 
       {/* Div 2: Visible only on large screens (lg:grid-cols-3) */}
       <div className='hidden lg:flex items-center justify-center'>
-        <img src="./logo.png" alt="logo" />
+        <img src="./lost-found-invert.jpg" alt="logo" className="rounded-full h-52" />
       </div>
 
       {/* Div 3: Visible on medium and larger screens (md:grid-cols-2 and lg:grid-cols-3) */}
