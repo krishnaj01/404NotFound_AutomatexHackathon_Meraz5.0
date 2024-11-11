@@ -45,7 +45,7 @@ const Found = () => {
   };
 
   return (
-    <div className="bg-[url('./iitbhilai.jpeg')] flex items-center justify-center h-screen bg-cover bg-center">
+    <div className="bg-[url('./iitbhilai.png')] flex items-center justify-center h-screen bg-cover bg-center">
       <div className="relative z-10 bg-white/30 backdrop-blur-lg p-8 rounded-xl shadow-lg w-full max-w-md">
         <h2 className="text-3xl font-bold text-center mb-6">
           Report your found item
