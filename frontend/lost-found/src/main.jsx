@@ -12,6 +12,7 @@ import Lost from './components/custom/Lost';
 import Found from './components/custom/Found';
 import Profile from './components/custom/ProfileForm';
 import About from './components/custom/About';
+import Faqs from './components/custom/Faqs';
 
 const route = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const route = createBrowserRouter([
     path: "/profile",
     element: <Profile />,
   },
+  {
+    path: "/faq",
+    element: <Faqs />,
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
