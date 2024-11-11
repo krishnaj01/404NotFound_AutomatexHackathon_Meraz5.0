@@ -19,11 +19,11 @@ function ProfileDetails() {
 function DetailCard({ icon, label, value }) {
   return (
     <div className="flex items-center space-x-4 p-4 bg-purple-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out">
-      <div className="text-purple-600 text-xl">
+      <div className="text-black text-xl">
         <i className={`fas fa-${icon}`}></i>
       </div>
       <div className="flex-1">
-        <label className="block text-purple-800 font-semibold text-left">{label}</label>
+        <label className="block text-black font-semibold text-left">{label}</label>
         <p className="text-gray-600 text-left">{value}</p>
       </div>
     </div>
