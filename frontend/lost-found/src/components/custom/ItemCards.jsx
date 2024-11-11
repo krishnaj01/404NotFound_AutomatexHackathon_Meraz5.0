@@ -7,6 +7,9 @@ function ItemCards() {
       <ItemCard />
       <ItemCard />
       <ItemCard />
+      <ItemCard />
+      <ItemCard />
+      <ItemCard />
     </div>
   );
 }
