@@ -4,12 +4,14 @@ import CardList from './CardList';
 const Home = () => {
   return (
     <>
-      <div className="w-full h-1/2 ">
+      <div className="w-full h-1/2 relative">
         <img
           src="./campusimage.png" // replace with your actual background image path
           alt="Building"
           className="w-full h-full object-cover"
         />
+        <p className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-center text-6xl text-white">Keep Your Belongings,<br /> Not the Hassle</p>
+        <p className="absolute bottom-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-2xl italic text-white">Effortlessly report lost items and find what's missing on campus.</p>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 my-10 mx-5 ">
