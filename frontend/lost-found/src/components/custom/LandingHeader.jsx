@@ -86,7 +86,7 @@ const LandingHeader = () => {
         ) : (
           <div className="flex items-center justify-between h-16 sm:h-[10vh] px-4 sm:px-8 shadow-sm">
             <div className="flex space-x-16 lg:space-x-24 xl:space-x-40 w-full sm:w-[40%] justify-center">
-              <Buttons buttonText="Home" />
+              <Buttons buttonText="Dashboard" />
               <Buttons buttonText="About" />
               <Buttons buttonText="FAQs" />
             </div>
@@ -181,19 +181,13 @@ const LandingHeader = () => {
             <div>
               <div className="flex gap-5 items-center">
                 {/* <Buttons buttonText="Profile" /> */}
-                {user?.picture ? (
+                {
                   <img
                     src={user?.picture}
                     alt="profile"
                     className="h-[35px] w-[35px] rounded-full"
                   />
-                ) : (
-                  <img
-                    src="/logo.png"
-                    alt="profile"
-                    className="h-[35px] w-[35px] rounded-full"
-                  />
-                )}
+                }
               </div>
             </div>
           </PopoverTrigger>
@@ -219,7 +213,7 @@ const LandingHeader = () => {
               </div>
               <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
                 <div className="text-xl"><IoMdHome /></div>
-                <div><a href="/home">Home</a></div>
+                <div><a href="/home">Dashboard</a></div>
               </div>
               <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
               <div className="text-xl"><TbCircleLetterLFilled /></div>
