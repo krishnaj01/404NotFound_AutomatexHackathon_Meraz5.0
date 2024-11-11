@@ -10,11 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@fortawesome/fontawesome-free": "^6.6.0",
-=======
     "@hookform/resolvers": "^3.9.1",
->>>>>>> b61a1823a5c84b608c3e43f162f0ee17520758fb
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-label": "^2.1.0",
