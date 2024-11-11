@@ -122,6 +122,22 @@ const LandingHeader = () => {
                   <div>
                     <h2 className="font-bold text-xl mt-2">{user?.name}</h2>
                     <p className="text-sm text-gray-500 mb-4">{user?.email}</p>
+                    <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
+              <div className="h-[30px] w-[30px] rounded-full">{user?.picture ? (
+                  <img
+                    src={user?.picture}
+                    alt="profile"
+                    className="h-[35px] w-[35px] rounded-full"
+                  />
+                ) : (
+                  <img
+                    src="/logo.png"
+                    alt="profile"
+                    className="h-[35px] w-[35px] rounded-full"
+                  />
+                )}</div>
+              <div><a href="/profile">Profile</a></div>
+              </div>
                     <div
                       onClick={() => {
                         googleLogout();
@@ -209,7 +225,7 @@ const LandingHeader = () => {
                     className="h-[35px] w-[35px] rounded-full"
                   />
                 )}</div>
-              <div><a href="/faq">Profile</a></div>
+              <div><a href="/profile">Profile</a></div>
               </div>
               <div className="hover:bg-purple-300 mb-3 flex gap-2 items-center bg-gray-100 text-center p-2 rounded-md cursor-pointer transition-colors duration-200">
                 <div className="text-xl"><IoMdHome /></div>
