@@ -13,7 +13,7 @@ function ItemCards() {
 
 function ItemCard() {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-500">
+    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-800">
     {/* Flex container for image and info */}
     <div className="flex items-center space-x-6 mb-6">
       {/* Image with adjusted width */}
@@ -24,7 +24,7 @@ function ItemCard() {
       />
       {/* Info section */}
       <div className="flex flex-col text-left">
-        <h3 className="font-semibold text-purple-800">Wallet</h3>
+        <h3 className="font-semibold text-black">Wallet</h3>
         <p className="text-gray-600">User Name<br />Contact no.</p>
       </div>
     </div>
@@ -33,7 +33,7 @@ function ItemCard() {
     <p className="text-gray-500 text-sm mt-2">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
     </p>
-    <p className="text-purple-600 font-semibold mt-4">Suspected place</p>
+    <p className="text-purple-900 font-semibold mt-4">Suspected place</p>
   </div>
   
   );

@@ -11,6 +11,7 @@ import Footer from './components/custom/Footer';
 import Lost from './components/custom/Lost';
 import Found from './components/custom/Found';
 import Profile from './components/custom/ProfileForm';
+import About from './components/custom/About';
 
 const route = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const route = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/about",
+    element: <About />
   },
   {
     path: "/lost",
