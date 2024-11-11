@@ -90,6 +90,7 @@ const Found = () => {
                 required: true,
                 autoFocus: true,
               }}
+              required
               inputStyle={{
                 padding: "5px",
                 borderRadius: "10px",
@@ -124,6 +125,7 @@ const Found = () => {
               id="description"
               name="description"
               placeholder="Item Description"
+              required
               value={formData.description}
               onChange={(e) =>
                 setFormData({ ...formData, description: e.target.value })
@@ -141,6 +143,7 @@ const Found = () => {
               id="place"
               name="place"
               placeholder="Place"
+              required
               value={formData.place}
               onChange={(e) =>
                 setFormData({ ...formData, place: e.target.value })

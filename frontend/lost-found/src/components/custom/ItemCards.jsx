@@ -1,9 +1,11 @@
 // components/ItemCards.js
 import React from 'react';
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdLocationPin } from "react-icons/md";
 
 function ItemCards({data}) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 w-full max-w-screen-lg px-4">
+    <div>
       <ItemCard data={data} />
     </div>
   );
@@ -12,27 +14,31 @@ function ItemCards({data}) {
 function ItemCard({data}) {
   const user = JSON.parse(localStorage.getItem("user"));
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-800 w-[20vw]">
-    {/* Flex container for image and info */}
-    <div className="flex items-center space-x-6 mb-6">
-      {/* Image with adjusted width */}
+    <div className="bg-white p-4 rounded-lg shadow-lg transform transition-all h-80 duration-300 ease-in-out hover:scale-105 hover:shadow-xl border hover:border-purple-900">
+    <div className="flex space-x-6 mb-6">
       <img
         src="./Campus.jpg"
         alt="Item"
-        className="w-1/2 h-32 object-cover rounded-md"
+        className="w-24 h-24 md:w-28 md:h-28 object-cover rounded-md"
       />
-      {/* Info section */}
       <div className="flex flex-col text-left">
-        <h3 className="font-semibold text-black">{data?.userSelection.item}</h3>
-        <p className="text-gray-600">{user.name}<br />{data?.userSelection?.contact}</p>
+        <h3 className="font-bold text-lg text-black">{data?.userSelection.item}</h3>
+        <p className='text-sm text-gray-500 mb-2'>{data?.userSelection?.date}</p>
+        <p className="text-gray-500 text-xs sm:text-sm">{user.name}</p>
+        <div className='flex items-center gap-1 text-gray-500'>
+        <FaPhoneAlt />
+        <p className='text-xs sm:text-sm'>{data?.userSelection?.contact.substring(2)}</p>
+        </div>
       </div>
     </div>
-    
-    {/* Description and suspected place */}
-    <p className="text-gray-500 text-sm mt-2">
+    <p className="text-gray-500 text-sm my-2 h-28 overflow-y-auto">
       {data?.userSelection?.description}
     </p>
-    <p className="text-purple-900 font-semibold mt-4">{data?.userSelection?.place}</p>
+    <div className='w-full bg-gray-500 h-[0.25px]'></div>
+    <div className='flex items-center gap-3 mt-2 text-xl text-purple-900'>
+    <MdLocationPin />
+    <p className="font-semibold">{data?.userSelection?.place}</p>
+    </div>
   </div>
   
   );
