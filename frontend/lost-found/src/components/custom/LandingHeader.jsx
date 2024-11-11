@@ -77,7 +77,7 @@ const LandingHeader = () => {
           <div className="p-3 shadow-sm flex justify-between items-center px-5">
             <a href="/">
               <div className="flex gap-3 items-center cursor-pointer">
-                <img src="/logo.png" className="h-16" alt="logo" />
+                <img src="/lost-found.jpg" className="h-16 rounded-full" alt="logo" />
                 <h2 className="font-bold text-3xl font-serif">Lost-Found</h2>
               </div>
             </a>
@@ -92,7 +92,7 @@ const LandingHeader = () => {
             </div>
 
             <div className="flex justify-center w-[15%] sm:w-[10%] hover:scale-150 transition-all">
-              <img src="/logo.png" alt="logo" className="h-10 sm:h-10" />
+              <img src="/lost-found.jpg" alt="logo" className="h-10 rounded-full sm:h-10" />
             </div>
 
             <div className="flex space-x-16 lg:space-x-24 xl:space-x-40 w-full sm:w-[40%] justify-center">
@@ -110,7 +110,7 @@ const LandingHeader = () => {
                         />
                       ) : (
                         <img
-                          src="/logo.png"
+                          src="/lost-found.jpg"
                           alt="profile"
                           className="h-[35px] w-[35px] rounded-full"
                         />
@@ -142,7 +142,7 @@ const LandingHeader = () => {
           <DialogContent>
             <DialogHeader>
               <DialogDescription className="text-center">
-                <img src="/logo.png" alt="logo" className="mx-auto h-16" />
+                <img src="/lost-found.jpg" alt="logo" className="mx-auto h-16 rounded-full" />
                 <h2 className="font-bold text-lg mt-7">Sign In with Google</h2>
                 <p>Sign in to the app with Google authentication securely</p>
                 <Button
@@ -164,7 +164,7 @@ const LandingHeader = () => {
           <div className="p-3 shadow-sm flex justify-between items-center px-5">
             <a href="/">
               <div className="flex gap-3 items-center cursor-pointer">
-                <img src="/logo.png" className="h-16" alt="logo" />
+                <img src="/lost-found.jpg" className="h-16 rounded-full" alt="logo" />
                 <h2 className="font-bold text-3xl font-serif">Lost-Found</h2>
               </div>
             </a>
@@ -173,7 +173,7 @@ const LandingHeader = () => {
         ) : (
       <div className="flex items-center justify-between h-16 px-4 sm:px-8 md:hidden">
         <div className="flex justify-center w-[15%] sm:w-[10%] hover:scale-150 transition-all">
-          <img src="/logo.png" alt="logo" className="h-10 sm:h-10" />
+          <img src="/lost-found.jpg" alt="logo" className="h-10 rounded-full sm:h-10" />
         </div>
 
         <Popover>
@@ -204,7 +204,7 @@ const LandingHeader = () => {
                   />
                 ) : (
                   <img
-                    src="/logo.png"
+                    src="/lost-found.jpg"
                     alt="profile"
                     className="h-[35px] w-[35px] rounded-full"
                   />

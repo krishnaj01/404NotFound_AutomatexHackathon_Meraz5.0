@@ -112,7 +112,7 @@ const Landing = () => {
               <DialogContent>
                 <DialogHeader>
                   <DialogDescription>
-                    <img src="/logo.png" alt="logo" />
+                    <img src="/lost-found.jpg" alt="logo" className="rounded-full" />
                     <h2 className="font-bold text-lg mt-7">
                       Sign In with Google
                     </h2>
@@ -132,7 +132,7 @@ const Landing = () => {
             </DialogClose>
           </Dialog>
         </div>
-        <img src="./lost-found.png" className="w-80 h-80"></img>
+        <img src="./lost-found.jpg" className="w-80 rounded-full"></img>
       </div>
       <div className="bg-gray-200 flex px-12 sm:px-24 md:px-48 p-10 flex-col xl:flex-row gap-5 justify-between mb-20 mx-12 sm:mx-24 md:mx-48 rounded-xl items-center">
         <div>
