@@ -1,27 +1,50 @@
 // Profile.js
-import React, { useState } from 'react';
-import Header from './Header';
-import ProfileDetails from './ProfileDetails';
-import ProfileStats from './ProfileStats';
-import ItemCards from './ItemCards';
-import { Button } from '../ui/button';
+import React, { useEffect, useState } from "react";
+import Header from "./Header";
+import ProfileDetails from "./ProfileDetails";
+import ProfileStats from "./ProfileStats";
+import { Button } from "../ui/button";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "@/service/firebaseConfig";
+import ProfileCards from "./ProfileCard";
 
 function Profile() {
-  const [variant, setVariant] = useState("outline")
-  const [dvariant, setDVariant] = useState("default")
+  const [variant, setVariant] = useState("outline");
+  const [dvariant, setDVariant] = useState("default");
+  const [userData, setUserData] = useState([]);
+
+  useEffect(() => {
+    GetUserData("LostItems");
+  }, []);
+
+  const GetUserData = async (collectionType) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) return;
+
+    const q = query(
+      collection(db, collectionType),
+      where("userEmail", "==", user.email)
+    );
+
+    setUserData([]);
+    const querySnapshot = await getDocs(q);
+    const data = querySnapshot.docs.map((doc) => doc.data());
+    setUserData(data);
+  };
 
   const show = () => {
-    if(variant === "ouline"){
+    if (variant === "outline") {
       setVariant("default");
       setDVariant("outline");
-    }
-    else{
+      GetUserData("FoundItems");
+    } else {
       setDVariant("default");
       setVariant("outline");
+      GetUserData("LostItems");
     }
-  }
+  };
+
   return (
-    //bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200
     <div className="flex justify-center bg-gray-50 p-6">
       <div className="w-full max-w-screen-lg flex flex-col items-center">
         <Header />
@@ -29,15 +52,24 @@ function Profile() {
           <ProfileDetails />
           <ProfileStats />
         </div>
-        <div className='flex justify-center items-center gap-5 my-5 mt-10'>
-        <Button variant={variant} onClick={show} className="w-64">Lost</Button>
-        <Button variant={dvariant} onClick={show} className="w-64">Found</Button>
+        <div className="flex justify-center items-center gap-5 my-5 mt-10">
+          <Button variant={variant} onClick={show} className="w-64">
+            Lost
+          </Button>
+          <Button variant={dvariant} onClick={show} className="w-64">
+            Found
+          </Button>
         </div>
-        <ItemCards />
+        <div className="px-2 mt-5 py-5 w-full overflow-x-auto">
+          <div className="flex gap-5 my-10">
+            {userData.map((data, index) => (
+              <ProfileCards data={data} key={index} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Profile;
-//bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200
