@@ -7,7 +7,7 @@ import { Button } from '../ui/button';
 const Footer = () => {
     const user = localStorage.getItem("user");
   return (
-    <div className='bg-gray-900 text-white py-10 px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center'>
+    <footer className='bg-gray-900 text-white py-10 px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center'>
       
       {/* Div 1: Visible on all screen sizes */}
       <div className='flex flex-col items-center justify-center'>
@@ -68,7 +68,7 @@ const Footer = () => {
             </>
         )}
       </div>
-    </div>
+    </footer>
   )
 }
 

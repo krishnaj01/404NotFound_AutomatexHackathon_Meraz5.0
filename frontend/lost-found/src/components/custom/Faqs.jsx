@@ -9,8 +9,8 @@ import {
 const Faqs = () => {
   return (
     <>
-      <div>
-        <h1 className="font-bold text-3xl text-purple-900 text-center mb-10 mt-10">
+      <section>
+        <h1 className="font-bold text-3xl text-purple-900 text-center mb-10 mt-10 mx-5">
           Frequently Asked Questions (FAQs)
         </h1>
         <div className="mx-12 sm:mx-24 lg:mx-96 mb-20">
@@ -65,8 +65,8 @@ const Faqs = () => {
             </AccordionItem>
           </Accordion>
         </div>
-      </div>
-      <div>
+      </section>
+      <section>
         <h1 className="font-bold text-3xl text-purple-900 text-center mb-10 mt-10">
           Guidelines
         </h1>
@@ -80,7 +80,7 @@ const Faqs = () => {
             <li className="mb-5"><strong>Report Sensitive or Prohibited Items Properly:</strong> For items like keys to restricted areas or sensitive documents, follow the college's designated protocol for returning these items.</li>
           </ul>
         </div>
-      </div>
+      </section>
     </>
   );
 };

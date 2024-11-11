@@ -3,7 +3,7 @@ import React from 'react';
 
 function Header() {
   return (
-    <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] bg-gray-200 mb-4 rounded-xl shadow-lg">
+    <header className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] bg-gray-200 mb-4 rounded-xl shadow-lg">
       <img
         src="./campusimage.png" // replace with your actual background image path
         alt="Building"
@@ -16,7 +16,7 @@ function Header() {
           className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-full"
         />
       </div>
-    </div>
+    </header>
   );
 }
 
