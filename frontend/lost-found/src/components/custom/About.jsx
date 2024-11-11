@@ -63,7 +63,7 @@ const About = () => {
                     </div>
                     <div className="bg-purple-300 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
                         <img src="/pfp.jpg" alt="User Dashboard Icon" className="w-20 h-20 mx-auto mb-4 rounded-full" />
-                        <h3 className="text-xl font-semibold text-purple-900 mb-2">Backend Wala</h3>
+                        <h3 className="text-xl font-semibold text-purple-900 mb-2">Krishna Jhanwar</h3>
                         <p className="text-sm text-black">View your reported and found items, along with stats and graphs of your item history.</p>
                     </div>
                 </div>
