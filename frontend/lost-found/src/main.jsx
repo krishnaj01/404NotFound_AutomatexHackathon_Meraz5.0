@@ -9,6 +9,8 @@ import Landing from './components/custom/Landing';
 import LandingHeader from './components/custom/LandingHeader';
 import Home from './components/HomePage/Home';
 import Footer from './components/custom/Footer';
+import Lost from './components/custom/Lost';
+import Found from './components/custom/Found';
 
 const route = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ const route = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/lost",
+    element: <Lost />,
+  },
+  {
+    path: "/found",
+    element: <Found />,
   },
 ]);
 
