@@ -17,7 +17,7 @@ const Lost = () => {
     place: "",
     contact: "",
     category: "",
-    name:user.name
+    name: user.name,
   });
 
   const SaveLostItem = async (formData) => {
@@ -44,7 +44,7 @@ const Lost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     SaveLostItem(formData);
-    window.location.replace('/home')
+    window.location.replace("/home");
   };
 
   return (
@@ -131,9 +131,7 @@ const Lost = () => {
                 <option value="Toys">Toys</option>
                 <option value="Keys">Keys</option>
                 <option value="Sporting Goods">Sporting Goods</option>
-                <option value="Health Care">
-                  Health Care
-                </option>
+                <option value="Health Care">Health Care</option>
                 <option value="Stationery">Stationery</option>
                 <option value="Tools and Equipment">Tools and Equipment</option>
                 <option value="Household Items">Household Items</option>

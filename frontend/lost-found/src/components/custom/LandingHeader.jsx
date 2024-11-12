@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/dialog";
 import axios from "axios";
 import { FcGoogle } from "react-icons/fc";
-import Buttons from "../HomePage/Buttons";
+import Buttons from "./Buttons";
 import { TbCircleLetterLFilled } from "react-icons/tb";
 import { TbCircleLetterFFilled } from "react-icons/tb";
 

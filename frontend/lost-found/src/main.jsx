@@ -6,7 +6,7 @@ import { createBrowserRouter, Router, RouterProvider } from 'react-router-dom';
 import { Toaster } from './components/ui/sonner';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import LandingHeader from './components/custom/LandingHeader';
-import Home from './components/HomePage/Home';
+import Home from './components/custom/Home';
 import Footer from './components/custom/Footer';
 import Lost from './components/custom/Lost';
 import Found from './components/custom/Found';
