@@ -24,7 +24,7 @@ function ItemCard({data}) {
       <div className="flex flex-col text-left">
         <h3 className="font-bold text-lg text-black">{data?.userSelection.item}</h3>
         <p className='text-sm text-gray-500 mb-2'>{data?.userSelection?.date}</p>
-        <p className="text-gray-500 text-xs sm:text-sm">{user.name}</p>
+        <p className="text-gray-500 text-xs sm:text-sm">{data?.userSelection.name}</p>
         <div className='flex items-center gap-1 text-gray-500'>
         <FaPhoneAlt />
         <p className='text-xs sm:text-sm'>{data?.userSelection?.contact.substring(2)}</p>

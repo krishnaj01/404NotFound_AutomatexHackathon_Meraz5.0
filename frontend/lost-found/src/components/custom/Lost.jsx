@@ -17,6 +17,7 @@ const Lost = () => {
     place: "",
     contact: "",
     category: "",
+    name:user.name
   });
 
   const SaveLostItem = async (formData) => {
