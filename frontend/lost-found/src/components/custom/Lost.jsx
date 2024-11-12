@@ -16,6 +16,7 @@ const Lost = () => {
     description: "",
     place: "",
     contact: "",
+    category: "",
   });
 
   const SaveLostItem = async (formData) => {
@@ -76,27 +77,68 @@ const Lost = () => {
             </div>
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="contact" className="sr-only">
-              Contact
-            </label>
-            <PhoneInput
-              country={"in"}
-              value={formData.contact}
-              onChange={handleChange}
-              disableDropdown={true}
-              inputProps={{
-                name: "phone",
-                required: true,
-                autoFocus: true,
-              }}
-              required
-              inputStyle={{
-                padding: "5px",
-                borderRadius: "10px",
-                border: "1px solid black"
-              }}
-            />
+          <div className="flex justify-between">
+            <div className="mb-4">
+              <label htmlFor="contact" className="sr-only">
+                Contact
+              </label>
+              <PhoneInput
+                country={"in"}
+                value={formData.contact}
+                onChange={handleChange}
+                disableDropdown={true}
+                inputProps={{
+                  name: "phone",
+                  required: true,
+                  autoFocus: true,
+                }}
+                required
+                inputStyle={{
+                  padding: "5px",
+                  borderRadius: "10px",
+                  border: "1px solid black",
+                }}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label htmlFor="category" className="block text-black">
+                Category
+              </label>
+              <select
+                id="category"
+                name="category"
+                required
+                value={formData.category}
+                onChange={(e) =>
+                  setFormData({ ...formData, category: e.target.value })
+                }
+                className="p-2 rounded-xl border border-black text-black w-full"
+              >
+                <option value="" disabled>
+                  Category
+                </option>
+                <option value="Electronics">Electronics</option>
+                <option value="Documents">Documents</option>
+                <option value="Personal Items">Personal Items</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Books">Books</option>
+                <option value="Bags">Bags</option>
+                <option value="Jewelry">Jewelry</option>
+                <option value="Toys">Toys</option>
+                <option value="Keys">Keys</option>
+                <option value="Sporting Goods">Sporting Goods</option>
+                <option value="Health Care">
+                  Health Care
+                </option>
+                <option value="Stationery">Stationery</option>
+                <option value="Tools and Equipment">Tools and Equipment</option>
+                <option value="Household Items">Household Items</option>
+                <option value="Pet Supplies">Pet Supplies</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
           </div>
 
           <div className="mb-4">

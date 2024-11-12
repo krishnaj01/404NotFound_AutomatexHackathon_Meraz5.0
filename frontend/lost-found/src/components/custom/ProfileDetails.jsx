@@ -2,16 +2,18 @@
 import React from 'react';
 
 function ProfileDetails() {
+
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <div className="bg-white p-6 pt-20 rounded-lg shadow-xl w-full max-w-xs sm:max-w-sm lg:w-[450px] space-y-6">
       {/* Full Name Card */}
-      <DetailCard icon="user" label="Full Name" value="John Doe" />
+      <DetailCard icon="user" label="Name" value={user.name} />
       {/* Username Card */}
-      <DetailCard icon="user-tag" label="Username" value="johndoe123" />
+      {/* <DetailCard icon="user-tag" label="Username" value="johndoe123" /> */}
       {/* Email Card */}
-      <DetailCard icon="paper-plane" label="Email" value="johndoe123@example.com" />
+      <DetailCard icon="paper-plane" label="Email" value={user.email} />
       {/* Contact Card */}
-      <DetailCard icon="phone-alt" label="Contact" value="+1234567890" />
+      {/* <DetailCard icon="phone-alt" label="Contact" value="+1234567890" /> */}
     </div>
   );
 }

@@ -62,7 +62,7 @@ function Profile() {
         </div>
         <div className="px-2 mt-5 py-5 w-full overflow-x-auto">
           <div className="flex gap-5 my-10">
-            {userData.map((data, index) => (
+            {userData.slice().reverse().map((data, index) => (
               <ProfileCards data={data} key={index} />
             ))}
           </div>
