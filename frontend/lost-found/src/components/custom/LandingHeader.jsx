@@ -110,7 +110,7 @@ const LandingHeader = () => {
                         />
                       ) : (
                         <img
-                          src="/lost-found.jpg"
+                          src="./lost-found.jpg"
                           alt="profile"
                           className="h-[35px] w-[35px] rounded-full"
                         />
