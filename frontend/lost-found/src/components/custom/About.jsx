@@ -55,8 +55,8 @@ const About = () => {
                         <p className="text-sm text-black">Register lost belongings with a detailed description and image to improve recovery chances.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
                             <a href="mailto:slokt@iitbhilai.ac.in"><SiGmail className='hover:text-red-500' /></a>
-                            <a href=""><FaInstagram className='hover:text-purple-500' /></a>
-                            <a href=""><FaLinkedinIn className='hover:text-blue-600' /></a>
+                            <a href="https://www.instagram.com/tulsyanslok?igsh=OXoxYW5ua2ZrZHVw"><FaInstagram className='hover:text-purple-500' /></a>
+                            <a href="https://www.linkedin.com/in/slok-tulsyan-003786293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedinIn className='hover:text-blue-600' /></a>
                         </div>
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
@@ -65,8 +65,8 @@ const About = () => {
                         <p className="text-sm text-black">Search through found items on campus to see if someone has already located your missing belongings.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
                             <a href="mailto:siddharthp@iitbhilai.ac.in"><SiGmail className='hover:text-red-500' /></a>
-                            <a href=""><FaInstagram className='hover:text-purple-500' /></a>
-                            <a href=""><FaLinkedinIn className='hover:text-blue-600' /></a>
+                            <a href="https://www.instagram.com/siddharthrai8568/profilecard/?igsh=NXd4ajVybnoxdXVh"><FaInstagram className='hover:text-purple-500' /></a>
+                            <a href="https://www.linkedin.com/in/siddharth-rai-453865298/"><FaLinkedinIn className='hover:text-blue-600' /></a>
                         </div>
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
