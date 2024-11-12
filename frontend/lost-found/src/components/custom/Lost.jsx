@@ -17,7 +17,8 @@ const Lost = () => {
     place: "",
     contact: "",
     category: "",
-    name:user.name
+    name: user.name,
+    image: ""
   });
 
   const SaveLostItem = async (formData) => {
@@ -41,11 +42,39 @@ const Lost = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    SaveLostItem(formData);
-    window.location.replace('/home')
+  const handleImageChange = (e) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      image:e.target.files[0]
+    }));
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    const formDataToSend = new FormData();
+    formDataToSend.append("image", formData.image); 
+  
+    try {
+      const res = await fetch("http://localhost:3000/upload", {
+        method: "POST",
+        body: formDataToSend,
+      });
+  
+      if (!res.ok) throw new Error("Image upload failed");
+  
+      const data = await res.json();
+      const imageUrl = data.imageUrl;
+  
+      const updatedFormData = { ...formData, image: imageUrl };
+      await SaveLostItem(updatedFormData); 
+  
+      window.location.replace("/home"); 
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
+  };
+  
 
   return (
     <div className="bg-[url('./iitbhilai.png')] flex items-center justify-center h-screen bg-cover bg-center">
@@ -131,9 +160,7 @@ const Lost = () => {
                 <option value="Toys">Toys</option>
                 <option value="Keys">Keys</option>
                 <option value="Sporting Goods">Sporting Goods</option>
-                <option value="Health Care">
-                  Health Care
-                </option>
+                <option value="Health Care">Health Care</option>
                 <option value="Stationery">Stationery</option>
                 <option value="Tools and Equipment">Tools and Equipment</option>
                 <option value="Household Items">Household Items</option>
@@ -195,6 +222,19 @@ const Lost = () => {
               className="p-2 rounded-xl border border-black text-black w-full"
             />
           </div>
+          <div className="mb-4">
+            <label htmlFor="image" className="block text-black">
+              Upload Item Image
+            </label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              required
+              className="p-2 rounded-xl border border-black text-black w-full"
+            />
+          </div>
+
 
           <div className="flex justify-end">
             <Button type="submit" className="ml-auto">

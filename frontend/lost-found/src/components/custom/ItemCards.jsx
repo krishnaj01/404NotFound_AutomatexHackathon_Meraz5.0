@@ -17,7 +17,7 @@ function ItemCard({data}) {
     <div className="bg-white p-4 rounded-lg shadow-lg transform transition-all h-80 duration-300 ease-in-out hover:scale-105 hover:shadow-xl border hover:border-purple-900">
     <div className="flex space-x-6 mb-6">
       <img
-        src="./Campus.jpg"
+        src={data?.userSelection?.image}
         alt="Item"
         className="w-24 h-24 md:w-28 md:h-28 object-cover rounded-md"
       />

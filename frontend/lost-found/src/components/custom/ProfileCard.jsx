@@ -27,14 +27,13 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
   };
 
   const handleSaveEdit = async () => {
-    
     try {
-      const itemRef = doc(db, type, data.id); 
+      const itemRef = doc(db, type, data.id);
       await updateDoc(itemRef, {
         userSelection: editItem,
       });
       setIsEditing(false);
-      onEdit(editItem); 
+      onEdit(editItem);
     } catch (error) {
       console.error("Error updating document: ", error);
     }
@@ -42,11 +41,10 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
   };
 
   const handleDelete = async () => {
-   
     try {
-      const itemRef = doc(db, type, data.id); 
+      const itemRef = doc(db, type, data.id);
       await deleteDoc(itemRef);
-      onDelete(data.id); 
+      onDelete(data.id);
     } catch (error) {
       console.error("Error deleting document: ", error);
     }
@@ -54,10 +52,10 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
   };
 
   return (
-    <div className="bg-white p-4 px-3 rounded-lg shadow-lg transform transition-all h-64 w-72 duration-300 ease-in-out hover:scale-105 hover:shadow-xl border hover:border-purple-900">
+    <div className="bg-white p-4 px-3 rounded-lg shadow-lg transform transition-all h-auto w-72 duration-300 ease-in-out hover:scale-105 hover:shadow-xl border hover:border-purple-900">
       <div className="flex space-x-6 mb-6">
         <img
-          src="./Campus.jpg"
+          src={data?.userSelection.image}
           alt="Item"
           className="w-24 h-24 md:w-28 md:h-28 object-cover rounded-md"
         />
@@ -69,31 +67,55 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
                 name="item"
                 value={editItem.item}
                 onChange={handleEditChange}
-                className="font-bold text-lg w-40 text-black"
+                className="font-bold text-lg text-black mb-2 w-full"
               />
               <input
                 type="text"
                 name="contact"
                 value={editItem.contact}
                 onChange={handleEditChange}
-                className="text-xs sm:text-sm w-40"
+                className="text-xs sm:text-sm w-full mb-2"
               />
-              <textarea
-                name="description"
-                value={editItem.description}
+              <select
+                id="category"
+                name="category"
+                required
+                value={editItem.category}
                 onChange={handleEditChange}
-                className="text-gray-500 text-sm my-1 mt-3 w-40 h-20 overflow-y-auto"
-              />
+                className="p-2 rounded-xl border border-black text-black w-full mb-2"
+              >
+                <option value="" disabled>
+                  Category
+                </option>
+                <option value="Electronics">Electronics</option>
+                <option value="Documents">Documents</option>
+                <option value="Personal Items">Personal Items</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Books">Books</option>
+                <option value="Bags">Bags</option>
+                <option value="Jewelry">Jewelry</option>
+                <option value="Toys">Toys</option>
+                <option value="Keys">Keys</option>
+                <option value="Sporting Goods">Sporting Goods</option>
+                <option value="Health Care">Health Care</option>
+                <option value="Stationery">Stationery</option>
+                <option value="Tools and Equipment">Tools and Equipment</option>
+                <option value="Household Items">Household Items</option>
+                <option value="Pet Supplies">Pet Supplies</option>
+                <option value="Other">Other</option>
+              </select>
             </>
           ) : (
             <>
-              <h3 className="font-bold text-lg text-black overflow-x-auto w-28 text-nowrap">
-                {data?.userSelection.item}
-              </h3>
-              <p className="text-sm text-gray-500 mb-2">
-                {data?.userSelection?.date}
+                <h3 className="font-bold text-lg text-black overflow-x-auto w-28 text-nowrap">
+                  {data?.userSelection.item}
+                </h3>
+              <p className="text-sm text-gray-500 mb-2">{data?.userSelection?.date}</p>
+              <p className="text-sm text-gray-500">{data?.userSelection?.category}</p>
+              <p className="text-gray-500 text-xs sm:text-sm overflow-x-auto w-28 text-nowrap">
+                {user.name}
               </p>
-              <p className="text-gray-500 text-xs sm:text-sm overflow-x-auto w-28 text-nowrap">{user.name}</p>
               <div className="flex items-center gap-1 text-gray-500">
                 <FaPhoneAlt />
                 <p className="text-xs sm:text-sm">
@@ -104,9 +126,20 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
           )}
         </div>
       </div>
-      {!isEditing? <p className="text-gray-500 text-sm my-2 h-12 overflow-y-auto">
-        {data?.userSelection?.description}
-      </p> : null}
+
+      {!isEditing && (
+        <p className="text-gray-500 text-sm my-2 h-12 overflow-y-auto">
+          {data?.userSelection?.description}
+        </p>
+      )}
+      {isEditing ? (
+        <textarea
+        name="description"
+        value={editItem.description}
+        onChange={handleEditChange}
+        className="ext-gray-500 text-sm my-1 mt-3 w-full h-10 overflow-y-auto"
+      />
+      ): null}
       {!isEditing && <div className="w-full bg-gray-500 h-[0.25px]"></div>}
       <div className="flex items-center gap-3 mt-1 text-xl text-purple-900">
         <MdLocationPin />
@@ -116,7 +149,7 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
             name="place"
             value={editItem.place}
             onChange={handleEditChange}
-            className="font-semibold w-40"
+            className="font-semibold w-full"
           />
         ) : (
           <p className="font-semibold">{data?.userSelection?.place}</p>
