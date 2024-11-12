@@ -17,7 +17,8 @@ const Found = () => {
     place: "",
     contact: "",
     category: "",
-    name:user.name
+    name:user.name,
+    image: ""
   });
 
   const SaveFoundItem = async (formData) => {
@@ -41,10 +42,36 @@ const Found = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleImageChange = (e) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      image:e.target.files[0]
+    }));
+  };
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    SaveFoundItem(formData);
-    window.location.replace('/home')
+    const formDataToSend = new FormData();
+    formDataToSend.append("image", formData.image); 
+  
+    try {
+      const res = await fetch("http://localhost:3000/upload", {
+        method: "POST",
+        body: formDataToSend,
+      });
+  
+      if (!res.ok) throw new Error("Image upload failed");
+  
+      const data = await res.json();
+      const imageUrl = data.imageUrl;
+  
+      const updatedFormData = { ...formData, image: imageUrl };
+      await SaveFoundItem(updatedFormData); 
+  
+      window.location.replace("/home"); 
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
   };
 
   return (
@@ -192,6 +219,18 @@ const Found = () => {
               onChange={(e) =>
                 setFormData({ ...formData, place: e.target.value })
               }
+              className="p-2 rounded-xl border border-black text-black w-full"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="image" className="block text-black">
+              Upload Item Image
+            </label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              required
               className="p-2 rounded-xl border border-black text-black w-full"
             />
           </div>
