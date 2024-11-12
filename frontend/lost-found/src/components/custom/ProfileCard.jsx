@@ -17,6 +17,7 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
 
   const [isEditing, setIsEditing] = useState(false);
   const [editItem, setEditItem] = useState({ ...data?.userSelection });
+  const [isChecked, setIsChecked] = useState(false); // State to control the checkbox
 
   const handleEditChange = (e) => {
     const { name, value } = e.target;
@@ -41,6 +42,12 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
   };
 
   const handleDelete = async () => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this item?");
+    if (!confirmDelete) {
+      setIsChecked(false); // Reset checkbox if deletion is canceled
+      return;
+    }
+
     try {
       const itemRef = doc(db, type, data.id);
       await deleteDoc(itemRef);
@@ -108,9 +115,9 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
             </>
           ) : (
             <>
-                <h3 className="font-bold text-lg text-black overflow-x-auto w-28 text-nowrap">
-                  {data?.userSelection.item}
-                </h3>
+              <h3 className="font-bold text-lg text-black overflow-x-auto w-28 text-nowrap">
+                {data?.userSelection.item}
+              </h3>
               <p className="text-sm text-gray-500 mb-2">{data?.userSelection?.date}</p>
               <p className="text-sm text-gray-500">{data?.userSelection?.category}</p>
               <p className="text-gray-500 text-xs sm:text-sm overflow-x-auto w-28 text-nowrap">
@@ -134,12 +141,12 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
       )}
       {isEditing ? (
         <textarea
-        name="description"
-        value={editItem.description}
-        onChange={handleEditChange}
-        className="ext-gray-500 text-sm my-1 mt-3 w-full h-10 overflow-y-auto"
-      />
-      ): null}
+          name="description"
+          value={editItem.description}
+          onChange={handleEditChange}
+          className="ext-gray-500 text-sm my-1 mt-3 w-full h-10 overflow-y-auto"
+        />
+      ) : null}
       {!isEditing && <div className="w-full bg-gray-500 h-[0.25px]"></div>}
       <div className="flex items-center gap-3 mt-1 text-xl text-purple-900">
         <MdLocationPin />
@@ -155,10 +162,14 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
           <p className="font-semibold">{data?.userSelection?.place}</p>
         )}
       </div>
-      <div className="flex justify-between mt-4">
-        <input
+      <div className="flex justify-between mt-4 ">
+        <input className="cursor-pointer"
           type="checkbox"
-          onClick={handleDelete}
+          checked={isChecked}
+          onChange={(e) => {
+            setIsChecked(e.target.checked);
+            if (e.target.checked) handleDelete();
+          }}
         />
         {isEditing ? (
           <button
