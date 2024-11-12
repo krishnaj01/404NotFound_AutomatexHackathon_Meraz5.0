@@ -21,9 +21,10 @@ function ItemCard({data}) {
         alt="Item"
         className="w-24 h-24 md:w-28 md:h-28 object-cover rounded-md"
       />
-      <div className="flex flex-col text-left">
+      <div className="flex flex-col text-left w-full">
         <h3 className="font-bold text-lg text-black">{data?.userSelection.item}</h3>
         <p className='text-sm text-gray-500 mb-2'>{data?.userSelection?.date}</p>
+        <p className='text-sm text-gray-500'>{data?.userSelection?.category}</p>
         <p className="text-gray-500 text-xs sm:text-sm">{data?.userSelection.name}</p>
         <div className='flex items-center gap-1 text-gray-500'>
         <FaPhoneAlt />
@@ -31,7 +32,7 @@ function ItemCard({data}) {
         </div>
       </div>
     </div>
-    <p className="text-gray-500 text-sm my-2 h-28 overflow-y-auto">
+    <p className="text-gray-500 text-sm my-2 h-20 overflow-y-auto">
       {data?.userSelection?.description}
     </p>
     <div className='w-full bg-gray-500 h-[0.25px]'></div>

@@ -44,6 +44,7 @@ const Found = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     SaveFoundItem(formData);
+    window.location.replace('/home')
   };
 
   return (

@@ -44,6 +44,7 @@ const Lost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     SaveLostItem(formData);
+    window.location.replace('/home')
   };
 
   return (

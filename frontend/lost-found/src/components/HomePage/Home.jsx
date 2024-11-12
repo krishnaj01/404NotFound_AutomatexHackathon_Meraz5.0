@@ -28,7 +28,7 @@ const Home = () => {
             <div className="text-2xl font-bold text-purple-600 ml-3">LOST ITEMS</div>
             <input
               type="text"
-              placeholder="Search by category"
+              placeholder="Search..."
               value={lostSearch}
               onChange={(e) => setLostSearch(e.target.value)}
               className="m-2 p-3 rounded-lg border border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600"
@@ -45,7 +45,7 @@ const Home = () => {
             <div className="text-2xl font-bold text-purple-600 ml-3">FOUND ITEMS</div>
             <input
               type="text"
-              placeholder="Search by category"
+              placeholder="Search..."
               value={foundSearch}
               onChange={(e) => setFoundSearch(e.target.value)}
               className="m-2 p-3 rounded-lg border border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600"
