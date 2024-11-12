@@ -1,36 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import ItemCards from '../custom/ItemCards';
-import { getDocs, query, where, collection } from 'firebase/firestore'; // Added 'collection' here
-import { db } from '@/service/firebaseConfig';
+import React, { useEffect, useState } from "react";
+import ItemCards from "../custom/ItemCards";
+import { getDocs, query, where, collection } from "firebase/firestore";
+import { db } from "@/service/firebaseConfig";
 
-const CardList = ({ type }) => {
+const CardList = ({ type, searchTerm }) => {
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {
     GetUserData();
-  }, []);
+  }, [type]);
 
   const GetUserData = async () => {
     const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) return;
 
-    const q = query(
-      collection(db, type),
-      where("userEmail", "==", user?.email)
-    );
+    const q = collection(db, type);
 
-    setUserData([]);
     const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      setUserData((prev) => [...prev, doc.data()]);
-    });
+    const data = querySnapshot.docs.map((doc) => doc.data());
+
+    setUserData(data);
   };
 
+  const filteredData = searchTerm
+    ? userData.filter(
+        (item) =>
+          item?.userSelection?.item
+            ?.toLowerCase()
+            .includes(searchTerm.toLowerCase()) ||
+          item?.userSelection?.name
+            ?.toLowerCase()
+            .includes(searchTerm.toLowerCase()) ||
+          item?.userSelection?.category
+            ?.toLowerCase()
+            .includes(searchTerm.toLowerCase()) ||
+          item?.userSelection?.date
+            ?.toLowerCase()
+            .includes(searchTerm.toLowerCase())
+      )
+    : userData;
+
   return (
-    <div className="px-5 mt-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10">
-        {userData.map((data, index) => (
-          <ItemCards data={data} key={index} />
-        ))}
+    <div className="px-2 mt-10">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 my-10">
+        {filteredData
+          .slice()
+          .reverse()
+          .map((data, index) => (
+            <ItemCards
+              data={data}
+              onDelete={(id) => handleItemDelete(id)}
+              onEdit={(updatedItem) => handleItemEdit(updatedItem)}
+              key={index}
+            />
+          ))}
       </div>
     </div>
   );
