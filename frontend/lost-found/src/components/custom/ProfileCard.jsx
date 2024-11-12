@@ -156,12 +156,10 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
         )}
       </div>
       <div className="flex justify-between mt-4">
-        <button
+        <input
+          type="checkbox"
           onClick={handleDelete}
-          className="text-red-500 hover:text-red-700"
-        >
-          Delete
-        </button>
+        />
         {isEditing ? (
           <button
             onClick={handleSaveEdit}
