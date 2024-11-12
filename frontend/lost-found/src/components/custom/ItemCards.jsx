@@ -12,11 +12,7 @@ function ItemCards({data}) {
 function ItemCard({data}) {
   const user = JSON.parse(localStorage.getItem("user"));
   return (
-<<<<<<< HEAD
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-400">
-=======
     <div className="bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-800 w-[20vw]">
->>>>>>> 37e65ab14b8c307b26b46e68f3ac4a9f512318b6
     {/* Flex container for image and info */}
     <div className="flex items-center space-x-6 mb-6">
       {/* Image with adjusted width */}
