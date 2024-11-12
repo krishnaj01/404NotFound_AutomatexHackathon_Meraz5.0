@@ -50,23 +50,23 @@ const About = () => {
                 <h2 className="text-2xl font-semibold text-purple-800 text-center mb-6">Developers</h2>
                 <div className="flex flex-wrap justify-center gap-8">
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
-                        <img src="/pfp.jpg" alt="Report Lost Items Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
+                        <img src="/slok.jpg" alt="Report Lost Items Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
                         <h3 className="text-xl font-semibold text-purple-900 mb-2">Slok Tulsyan</h3>
                         <p className="text-sm text-black">Register lost belongings with a detailed description and image to improve recovery chances.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
                             <a href="mailto:slokt@iitbhilai.ac.in"><SiGmail className='hover:text-red-500' /></a>
-                            <a href=""><FaInstagram className='hover:text-purple-500' /></a>
-                            <a href=""><FaLinkedinIn className='hover:text-blue-600' /></a>
+                            <a href="https://www.instagram.com/tulsyanslok?igsh=OXoxYW5ua2ZrZHVw"><FaInstagram className='hover:text-purple-500' /></a>
+                            <a href="https://www.linkedin.com/in/slok-tulsyan-003786293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedinIn className='hover:text-blue-600' /></a>
                         </div>
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
-                        <img src="/pfp.jpg" alt="Browse Found Items Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
+                        <img src="/sid.jpeg" alt="Browse Found Items Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
                         <h3 className="text-xl font-semibold text-purple-900 mb-2">Siddharth Rai</h3>
                         <p className="text-sm text-black">Search through found items on campus to see if someone has already located your missing belongings.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
                             <a href="mailto:siddharthp@iitbhilai.ac.in"><SiGmail className='hover:text-red-500' /></a>
-                            <a href=""><FaInstagram className='hover:text-purple-500' /></a>
-                            <a href=""><FaLinkedinIn className='hover:text-blue-600' /></a>
+                            <a href="https://www.instagram.com/siddharthrai8568/profilecard/?igsh=NXd4ajVybnoxdXVh"><FaInstagram className='hover:text-purple-500' /></a>
+                            <a href="https://www.linkedin.com/in/siddharth-rai-453865298/"><FaLinkedinIn className='hover:text-blue-600' /></a>
                         </div>
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
