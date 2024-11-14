@@ -3,6 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { db } from "@/service/firebaseConfig";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
+import { FaTrashAlt } from "react-icons/fa";
 
 function ProfileCards({ data, onDelete, onEdit, type }) {
   return (
@@ -173,15 +174,10 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
           <p className="font-semibold">{data?.userSelection?.place}</p>
         )}
       </div>
-      <div className="flex justify-between mt-4 ">
-        <input className="cursor-pointer"
-          type="checkbox"
-          checked={isChecked}
-          onChange={(e) => {
-            setIsChecked(e.target.checked);
-            if (e.target.checked) handleDelete();
-          }}
-        />
+      <div className="flex justify-between mt-4">
+        <button className="cursor-pointer" onClick={handleDelete}>
+        <FaTrashAlt />
+        </button>
         {isEditing ? (
           <button
             onClick={handleSaveEdit}

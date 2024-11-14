@@ -181,6 +181,7 @@ const Lost = () => {
               name="item"
               placeholder="Item Name"
               required
+              maxLength="15"
               value={formData.item}
               onChange={(e) =>
                 setFormData({ ...formData, item: e.target.value })
