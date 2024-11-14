@@ -51,8 +51,9 @@ const About = () => {
                 <div className="flex flex-wrap justify-center gap-8">
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
                         <img src="/slok.jpg" alt="Report Lost Items Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
-                        <h3 className="text-xl font-semibold text-purple-900 mb-2">Slok Tulsyan</h3>
-                        <p className="text-sm text-black">Register lost belongings with a detailed description and image to improve recovery chances.</p>
+                        <h3 className="text-xl font-semibold text-purple-900">Slok Tulsyan</h3>
+                        <p className="text-xs text-purple-800 mb-3">+91 99310-85103</p>
+                        <p className="text-sm text-black italic mb-5">Register lost belongings with a detailed description and image to improve recovery chances.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
                             <a href="mailto:slokt@iitbhilai.ac.in"><SiGmail className='hover:text-red-500' /></a>
                             <a href="https://www.instagram.com/tulsyanslok?igsh=OXoxYW5ua2ZrZHVw"><FaInstagram className='hover:text-purple-500' /></a>
@@ -61,8 +62,9 @@ const About = () => {
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
                         <img src="/sid.jpeg" alt="Browse Found Items Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
-                        <h3 className="text-xl font-semibold text-purple-900 mb-2">Siddharth Rai</h3>
-                        <p className="text-sm text-black">Search through found items on campus to see if someone has already located your missing belongings.</p>
+                        <h3 className="text-xl font-semibold text-purple-900">Siddharth Rai</h3>
+                        <p className="text-xs text-purple-800 mb-3">+91 89288-58329</p>
+                        <p className="text-sm text-black italic mb-5">Search through found items on campus to see if someone has already located your missing belongings.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
                             <a href="mailto:siddharthp@iitbhilai.ac.in"><SiGmail className='hover:text-red-500' /></a>
                             <a href="https://www.instagram.com/siddharthrai8568/profilecard/?igsh=NXd4ajVybnoxdXVh"><FaInstagram className='hover:text-purple-500' /></a>
@@ -71,8 +73,9 @@ const About = () => {
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
                         <img src="/pfp.jpg" alt="Claim Items Securely Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
-                        <h3 className="text-xl font-semibold text-purple-900 mb-2">Dhruv Chouksey</h3>
-                        <p className="text-sm text-black">If you find something that belongs to you, submit a claim to verify ownership.</p>
+                        <h3 className="text-xl font-semibold text-purple-900">Dhruv Chouksey</h3>
+                        <p className="text-xs text-purple-800 mb-3">+91 83493-49693</p>
+                        <p className="text-sm text-black italic mb-5">If you find something that belongs to you, submit a claim to verify ownership.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
                             <a href="mailto:dhruvc@iitbhilai.ac.in"><SiGmail className='hover:text-red-500' /></a>
                             <a href=""><FaInstagram className='hover:text-purple-500' /></a>
@@ -81,8 +84,9 @@ const About = () => {
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
                         <img src="/krishna.jpg" alt="User Dashboard Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
-                        <h3 className="text-xl font-semibold text-purple-900 mb-2">Krishna Jhanwar</h3>
-                        <p className="text-sm text-black">View your reported and found items, along with stats and graphs of your item history.</p>
+                        <h3 className="text-xl font-semibold text-purple-900">Krishna Jhanwar</h3>
+                        <p className="text-xs text-purple-800 mb-3">+91 85915-65932</p>
+                        <p className="text-sm italic text-black mb-5">"Debugging my way through life, one error at a time."</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
                             <a href="mailto:krishnaj@iitbhilai.ac.in"><SiGmail className='hover:text-red-500' /></a>
                             <a href="https://www.instagram.com/krishna_jhanwar01/"><FaInstagram className='hover:text-purple-500' /></a>
@@ -91,11 +95,6 @@ const About = () => {
                     </div>
                 </div>
             </section>
-            <section>
-                <h2 className="text-2xl font-semibold text-purple-800 text-center mb-6">Contact Us</h2>
-            </section>
-
-
         </div>
     );
 };
