@@ -70,13 +70,13 @@ const About = () => {
                         </div>
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
-                        <img src="/pfp.jpg" alt="Claim Items Securely Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
+                        <img src="/Dhruv.jpg" alt="Claim Items Securely Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
                         <h3 className="text-xl font-semibold text-purple-900 mb-2">Dhruv Chouksey</h3>
                         <p className="text-sm text-black">If you find something that belongs to you, submit a claim to verify ownership.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
                             <a href="mailto:dhruvc@iitbhilai.ac.in"><SiGmail className='hover:text-red-500' /></a>
-                            <a href=""><FaInstagram className='hover:text-purple-500' /></a>
-                            <a href=""><FaLinkedinIn className='hover:text-blue-600' /></a>
+                            <a href="https://www.instagram.com/dhruv.chouksey14/profilecard/?igsh=dXp0NWU3YmluaWp4"><FaInstagram className='hover:text-purple-500' /></a>
+                            <a href="https://www.linkedin.com/in/dhruv-chouksey-211b4b283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedinIn className='hover:text-blue-600' /></a>
                         </div>
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
