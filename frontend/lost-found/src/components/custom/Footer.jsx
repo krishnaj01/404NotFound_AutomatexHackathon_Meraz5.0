@@ -33,7 +33,7 @@ const Footer = () => {
         {user ? (
             <>
                 <a href="/home">
-          <Button variant="link" className="text-white text-lg hover:text-purple-500">Home</Button>
+          <Button variant="link" className="text-white text-lg hover:text-purple-500">Dashboard</Button>
         </a>
         <a href="/lost">
           <Button variant="link" className="text-white text-lg hover:text-purple-500">Lost</Button>
@@ -51,7 +51,7 @@ const Footer = () => {
         ) : (
             <>
                 <a href="/" onClick={() => alert('You have to sign in first.')}>
-          <Button variant="link" className="text-white text-lg hover:text-purple-500">Home</Button>
+          <Button variant="link" className="text-white text-lg hover:text-purple-500">Dashboard</Button>
         </a>
         <a href="/" onClick={() => alert('You have to sign in first.')}>
           <Button variant="link" className="text-white text-lg hover:text-purple-500">Lost</Button>

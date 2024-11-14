@@ -13,12 +13,14 @@ const Home = () => {
           alt="Building"
           className="w-full h-full object-cover"
         />
-        <p className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-center text-6xl text-white">
-          Keep Your Belongings,<br /> Not the Hassle
-        </p>
-        <p className="absolute bottom-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-2xl italic text-white">
-          Effortlessly report lost items and find what's missing on campus.
-        </p>
+        <div className="absolute inset-0 flex flex-col justify-center items-center">
+          <p className="font-bold text-center text-2xl md:text-4xl lg:text-6xl text-white pb-5">
+            Keep Your Belongings,<br /> Not the Hassle
+          </p>
+          <p className="italic text-center text-sm md:text-xl lg:text-2xl text-white">
+            Effortlessly report lost items and find what's missing on campus.
+          </p>
+        </div>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 my-10 mx-5">
