@@ -17,7 +17,7 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
 
   const [isEditing, setIsEditing] = useState(false);
   const [editItem, setEditItem] = useState({ ...data?.userSelection });
-  const [isChecked, setIsChecked] = useState(false); // State to control the checkbox
+  const [isChecked, setIsChecked] = useState(false); 
 
   const handleEditChange = (e) => {
     const { name, value } = e.target;
@@ -44,7 +44,7 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
   const handleDelete = async () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this item?");
     if (!confirmDelete) {
-      setIsChecked(false); // Reset checkbox if deletion is canceled
+      setIsChecked(false); 
       return;
     }
 
