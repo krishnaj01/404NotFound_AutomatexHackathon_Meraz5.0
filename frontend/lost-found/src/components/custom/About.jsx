@@ -80,7 +80,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="bg-purple-200 rounded-lg shadow-lg p-6 w-60 text-center border border-purple-200 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-700">
-                        <img src="/pfp.jpg" alt="User Dashboard Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
+                        <img src="/krishna.jpg" alt="User Dashboard Icon" className="w-28 h-28 mx-auto mb-4 border-4 border-purple-900 rounded-full" />
                         <h3 className="text-xl font-semibold text-purple-900 mb-2">Krishna Jhanwar</h3>
                         <p className="text-sm text-black">View your reported and found items, along with stats and graphs of your item history.</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
