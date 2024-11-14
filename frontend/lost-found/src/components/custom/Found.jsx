@@ -106,7 +106,7 @@ const Found = () => {
             </div>
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between gap-2">
             <div className="mb-4">
               <label htmlFor="contact" className="sr-only">
                 Contact
@@ -123,15 +123,16 @@ const Found = () => {
                 }}
                 required
                 inputStyle={{
-                  padding: "5px",
+                  padding: "6px",
                   borderRadius: "10px",
                   border: "1px solid black",
+                  marginTop: "5px"
                 }}
               />
             </div>
 
             <div className="mb-4">
-              <label htmlFor="category" className="block text-black">
+              <label htmlFor="category" className="block text-black mb-1">
                 Category
               </label>
               <select
@@ -171,7 +172,7 @@ const Found = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="item" className="block text-black">
+            <label htmlFor="item" className="block text-black mb-1">
                 Found Item
             </label>
             <input
@@ -188,8 +189,8 @@ const Found = () => {
             />
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="description" className="block text-black">
+          <div className="mb-2">
+            <label htmlFor="description" className="block text-black mb-1">
               Item Description
             </label>
             <textarea
@@ -206,8 +207,8 @@ const Found = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="place" className="block text-black">
-              Suspected Place
+            <label htmlFor="place" className="block text-black mb-1">
+              Found at
             </label>
             <input
               type="text"
@@ -223,7 +224,7 @@ const Found = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="image" className="block text-black">
+            <label htmlFor="image" className="block text-black mb-1">
               Upload Item Image
             </label>
             <input
