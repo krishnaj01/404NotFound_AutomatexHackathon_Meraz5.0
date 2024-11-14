@@ -51,6 +51,17 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
     try {
       const itemRef = doc(db, type, data.id);
       await deleteDoc(itemRef);
+      const imageName = data?.userSelection.image.split("/").pop();
+      const res = await fetch(
+        `http://localhost:3000/delete-image?filename=${imageName}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error("Failed to delete image");
+      }
       onDelete(data.id);
     } catch (error) {
       console.error("Error deleting document: ", error);
