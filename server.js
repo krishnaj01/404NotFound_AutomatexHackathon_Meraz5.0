@@ -13,7 +13,7 @@ const app = express();
 
 // Enable CORS for requests from your frontend
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: 'https://404-not-found-automatex-hackathon-meraz5-0.vercel.app/', 
 }));
 
 const storage = multer.diskStorage({
