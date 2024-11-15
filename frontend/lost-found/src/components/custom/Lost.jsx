@@ -43,6 +43,14 @@ const Lost = () => {
     }));
   };
 
+  const handleDateChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   const handleImageChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -115,7 +123,7 @@ const Lost = () => {
                 name="date"
                 max={formatDate(new Date())}
                 value={formData.date}
-                onChange={handleChange}
+                onChange={handleDateChange}
                 className="p-1.5 border border-black rounded-xl"
               />
             </div>

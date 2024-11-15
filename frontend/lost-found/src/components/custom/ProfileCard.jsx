@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { db } from "@/service/firebaseConfig";
@@ -26,6 +26,17 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
       [name]: value,
     });
   };
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const itemDate = new Date(data?.userSelection.date);
+    const timeDiff = currentDate - itemDate; 
+    const daysDiff = timeDiff / (1000 * 3600 * 24);
+
+    if (daysDiff >= 7) {
+      handleDelete(); 
+    }
+  }, [data]);
 
   const handleSaveEdit = async () => {
     try {
@@ -64,6 +75,17 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
     }
     window.location.reload();
   };
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const itemDate = new Date(data?.userSelection.date);
+    const timeDiff = currentDate - itemDate;
+    const daysDiff = timeDiff / (1000 * 3600 * 24);
+
+    if (daysDiff >= 7) {
+      handleDelete();
+    }
+  }, [data]);
 
   return (
     <div className="bg-white p-4 px-3 rounded-lg shadow-lg transform transition-all h-auto w-72 duration-300 ease-in-out hover:scale-105 hover:shadow-xl border hover:border-purple-900">
@@ -170,12 +192,17 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
         )}
       </div>
       <div className="flex justify-between mt-4">
+<<<<<<< HEAD
         <button className="cursor-pointer" onClick={() => {
             if (window.confirm("Are you sure you want to delete this item?")) {
               handleDelete(); 
             }
           }}>
         <FaTrashAlt />
+=======
+        <button className="cursor-pointer" onClick={handleDelete}>
+          <FaTrashAlt />
+>>>>>>> 83f823672b79b304da190fee49c5695669264a3e
         </button>
         {isEditing ? (
           <button
