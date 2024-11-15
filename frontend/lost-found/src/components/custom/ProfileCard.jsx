@@ -53,11 +53,7 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
   };
 
   const handleDelete = async () => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this item?");
-    if (!confirmDelete) {
-      setIsChecked(false);
-      return;
-    }
+   
 
     try {
       const itemRef = doc(db, type, data.id);
@@ -196,8 +192,17 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
         )}
       </div>
       <div className="flex justify-between mt-4">
+<<<<<<< HEAD
+        <button className="cursor-pointer" onClick={() => {
+            if (window.confirm("Are you sure you want to delete this item?")) {
+              handleDelete(); 
+            }
+          }}>
+        <FaTrashAlt />
+=======
         <button className="cursor-pointer" onClick={handleDelete}>
           <FaTrashAlt />
+>>>>>>> 83f823672b79b304da190fee49c5695669264a3e
         </button>
         {isEditing ? (
           <button
