@@ -1,4 +1,4 @@
-import { useCountContext } from "@/context/CountContext";
+import { useCountContext } from "@/context/countContext";
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 

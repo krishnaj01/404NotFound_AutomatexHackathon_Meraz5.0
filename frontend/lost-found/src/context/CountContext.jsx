@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
-export const CountContext = createContext();
+export const countContext = createContext();
 export const useCountContext = () => {
-    return useContext(CountContext);
+    return useContext(countContext);
 }
 export const CountContextProvider = ({ children }) => {
     const [lostCount, setLostCount] = useState(JSON.parse(localStorage.getItem("lost")) || 0);

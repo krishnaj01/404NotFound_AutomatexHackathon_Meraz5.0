@@ -13,7 +13,7 @@ import Found from './components/custom/Found';
 import Profile from './components/custom/ProfileForm';
 import About from './components/custom/About';
 import Faqs from './components/custom/Faqs';
-import { CountContextProvider } from './context/CountContext';
+import { CountContextProvider } from './context/countContext';
 
 const route = createBrowserRouter([
   {
