@@ -32,7 +32,7 @@ function ItemCard({data}) {
         </div>
       </div>
     </div>
-    <p className="text-gray-500 text-sm my-2 h-20 overflow-y-auto">
+    <p className="text-gray-500 text-sm my-2 h-16 overflow-y-auto">
       {data?.userSelection?.description}
     </p>
     <div className='w-full bg-gray-500 h-[0.25px]'></div>

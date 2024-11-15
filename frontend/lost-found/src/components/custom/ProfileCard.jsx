@@ -18,7 +18,6 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
 
   const [isEditing, setIsEditing] = useState(false);
   const [editItem, setEditItem] = useState({ ...data?.userSelection });
-  const [isChecked, setIsChecked] = useState(false); 
 
   const handleEditChange = (e) => {
     const { name, value } = e.target;

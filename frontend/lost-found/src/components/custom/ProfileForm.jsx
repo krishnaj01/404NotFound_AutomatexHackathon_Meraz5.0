@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/service/firebaseConfig";
 import ProfileCards from "./ProfileCard";
+import ItemPieChart from "./PieChart";
 
 function Profile() {
   const [variant, setVariant] = useState("outline");
@@ -81,6 +82,7 @@ function Profile() {
         <div className="flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-8 mt-2 w-full">
           <ProfileDetails />
           <ProfileStats lost={lostItemCount} found={foundItemCount} />
+          <ItemPieChart lostItemCount={lostItemCount} foundItemCount={foundItemCount} />
         </div>
         <div className="flex justify-center items-center gap-5 my-5 mt-10">
           <Button variant={variant} disabled={variant === "outline"} onClick={show} className="sm:w-52 md:w-64">

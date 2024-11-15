@@ -11,7 +11,7 @@ const Footer = () => {
       
       {/* Div 1: Visible on all screen sizes */}
       <div className='flex flex-col items-center justify-center'>
-        <h1 className='font-bold text-6xl font-serif'>Lost-Found</h1>
+        <h1 className='font-bold text-6xl'>Back2You</h1>
         <h5 className='text-xl text-gray-400 mb-8'>Lost something? We are here to bring it back</h5>
         <div>
           <h2 className='text-2xl mb-5'>Contact Us</h2>
