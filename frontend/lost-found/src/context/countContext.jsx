@@ -7,6 +7,6 @@ export const CountContextProvider = ({ children }) => {
     const [lostCount, setLostCount] = useState(JSON.parse(localStorage.getItem("lost")) || 0);
     const [foundCount, setFoundCount] = useState(JSON.parse(localStorage.getItem("found")) || 0);
     return (
-        <CountContext.Provider value={{ lostCount, setLostCount, foundCount, setFoundCount }}>{children}</CountContext.Provider>
+        <countContext.Provider value={{ lostCount, setLostCount, foundCount, setFoundCount }}>{children}</countContext.Provider>
     );
 };
