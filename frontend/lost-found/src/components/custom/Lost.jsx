@@ -3,6 +3,7 @@ import { db } from "@/service/firebaseConfig";
 import { setDoc, doc } from "firebase/firestore";
 import { Button } from "../ui/button";
 import PhoneInput from "react-phone-input-2";
+import { useCountContext } from "@/context/countContext";
 
 const Lost = () => {
   const formatDate = (date) => {
@@ -45,36 +46,48 @@ const Lost = () => {
   const handleImageChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
-      image:e.target.files[0]
+      image: e.target.files[0]
     }));
   };
 
+  const {lostCount, setLostCount} = useCountContext();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    if (lostCount === 0) {
+      const newLostVal = 1;
+      localStorage.setItem("lost", JSON.stringify(newLostVal));
+      setLostCount(newLostVal);
+    } else {
+      const prevLostVal = JSON.parse(localStorage.getItem("lost")) || 0;
+      const newLostVal = prevLostVal + 1;
+      localStorage.setItem("lost", JSON.stringify(newLostVal));
+      setLostCount(newLostVal);
+    }
+
     const formDataToSend = new FormData();
-    formDataToSend.append("image", formData.image); 
-  
+    formDataToSend.append("image", formData.image);
+
     try {
       const res = await fetch("http://localhost:3000/upload", {
         method: "POST",
         body: formDataToSend,
       });
-  
+
       if (!res.ok) throw new Error("Image upload failed");
-  
+
       const data = await res.json();
       const imageUrl = data.imageUrl;
-  
+
       const updatedFormData = { ...formData, image: imageUrl };
-      await SaveLostItem(updatedFormData); 
-  
-      window.location.replace("/home"); 
+      await SaveLostItem(updatedFormData);
+
+      window.location.replace("/home");
     } catch (error) {
       console.error("Error uploading image:", error);
     }
   };
-  
+
 
   return (
     <div className="bg-[url('./iitbhilai.png')] flex items-center justify-center h-screen bg-cover bg-center">

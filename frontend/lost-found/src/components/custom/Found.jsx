@@ -3,6 +3,7 @@ import { db } from "@/service/firebaseConfig";
 import { setDoc, doc } from "firebase/firestore";
 import { Button } from "../ui/button";
 import PhoneInput from "react-phone-input-2";
+import { useCountContext } from "@/context/countContext";
 
 const Found = () => {
   const formatDate = (date) => {
@@ -49,8 +50,20 @@ const Found = () => {
     }));
   };
 
+  const {foundCount, setFoundCount} = useCountContext();
+
   const handleSubmit = async(e) => {
     e.preventDefault();
+    if (foundCount === 0) {
+      const newFoundVal = 1;
+      localStorage.setItem("found", JSON.stringify(newFoundVal));
+      setLostCount(newFoundVal);
+    } else {
+      const prevFoundVal = JSON.parse(localStorage.getItem("found")) || 0;
+      const newFoundVal = prevFoundVal + 1;
+      localStorage.setItem("lost", JSON.stringify(newFoundVal));
+      setLostCount(newFoundVal);
+    }
     const formDataToSend = new FormData();
     formDataToSend.append("image", formData.image); 
   

@@ -13,6 +13,7 @@ import Found from './components/custom/Found';
 import Profile from './components/custom/ProfileForm';
 import About from './components/custom/About';
 import Faqs from './components/custom/Faqs';
+import { CountContextProvider } from './context/CountContext';
 
 const route = createBrowserRouter([
   {
@@ -47,9 +48,11 @@ const route = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_AUTH_CLIENT_ID}>
+      <CountContextProvider>
       <LandingHeader/>
       <Toaster />
       <RouterProvider router={route} />
       <Footer />
+      </CountContextProvider>
     </GoogleOAuthProvider>
 );
