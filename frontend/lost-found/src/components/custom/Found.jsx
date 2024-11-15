@@ -57,12 +57,12 @@ const Found = () => {
     if (foundCount === 0) {
       const newFoundVal = 1;
       localStorage.setItem("found", JSON.stringify(newFoundVal));
-      setLostCount(newFoundVal);
+      setFoundCount(newFoundVal);
     } else {
       const prevFoundVal = JSON.parse(localStorage.getItem("found")) || 0;
       const newFoundVal = prevFoundVal + 1;
       localStorage.setItem("found", JSON.stringify(newFoundVal));
-      setLostCount(newFoundVal);
+      setFoundCount(newFoundVal);
     }
     const formDataToSend = new FormData();
     formDataToSend.append("image", formData.image); 
