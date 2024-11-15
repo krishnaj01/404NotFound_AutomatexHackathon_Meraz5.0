@@ -78,7 +78,7 @@ const LandingHeader = () => {
             <a href="/">
               <div className="flex gap-3 items-center cursor-pointer">
                 <img src="/lost-found.jpg" className="h-16 rounded-full" alt="logo" />
-                <h2 className="font-bold text-3xl permanent-marker-regular">CampusReturns</h2>
+                <h2 className="font-bold text-3xl permanent-marker-regular">Campus Returns</h2>
               </div>
             </a>
             <Button onClick={() => setOpenDialog(true)}>Sign In</Button>
@@ -181,7 +181,7 @@ const LandingHeader = () => {
             <a href="/">
               <div className="flex gap-3 items-center cursor-pointer">
                 <img src="/lost-found.jpg" className="h-16 rounded-full" alt="logo" />
-                <h2 className="font-bold text-3xl permanent-marker-regular">CampusReturns</h2>
+                <h2 className="font-bold text-3xl permanent-marker-regular">Campus Returns</h2>
               </div>
             </a>
             <Button onClick={() => setOpenDialog(true)}>Sign In</Button>
