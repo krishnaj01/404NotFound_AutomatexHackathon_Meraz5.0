@@ -15,9 +15,9 @@ const app = express();
 app.use(cors({
   origin: 'https://404-not-found-automatex-hackathon-meraz5-0.vercel.app/', 
 }));
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.use(express.static(path.join(__dirname, "/dist")));
 app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+	res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 const storage = multer.diskStorage({
