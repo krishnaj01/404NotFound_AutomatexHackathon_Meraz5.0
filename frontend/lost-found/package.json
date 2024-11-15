@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "both": "concurrently \"npm run dev\" \"nodemon server.js\""
   },
   "dependencies": {
     "@google-cloud/storage": "^7.14.0",
@@ -22,6 +23,7 @@
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "concurrently": "^9.1.0",
     "cors": "^2.8.5",
     "express": "^4.21.1",
     "firebase": "^11.0.1",
