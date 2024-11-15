@@ -13,14 +13,10 @@ function Profile() {
   const [dvariant, setDVariant] = useState("default");
   const [userData, setUserData] = useState([]);
   const [type, setType] = useState("LostItems");
-  const [lostItemCount, setLostItemCount] = useState(0);
-  const [foundItemCount, setFoundItemCount] = useState(0);
 
   useEffect(() => {
     // Fetch Lost Items initially
     GetUserData("LostItems");
-    // Fetch Found Items count initially
-    GetItemsCount("FoundItems");
   }, []);
 
   const GetUserData = async (collectionType) => {
@@ -36,29 +32,6 @@ function Profile() {
     const querySnapshot = await getDocs(q);
     const data = querySnapshot.docs.map((doc) => doc.data());
     setUserData(data);
-
-    // Count Lost Items
-    if (collectionType === "LostItems") {
-      setLostItemCount(data.length);
-    }
-  };
-
-  const GetItemsCount = async (collectionType) => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (!user) return;
-
-    const q = query(
-      collection(db, collectionType),
-      where("userEmail", "==", user.email)
-    );
-
-    const querySnapshot = await getDocs(q);
-    const data = querySnapshot.docs.map((doc) => doc.data());
-
-    // Count Found Items
-    if (collectionType === "FoundItems") {
-      setFoundItemCount(data.length);
-    }
   };
 
   const show = () => {
@@ -81,8 +54,8 @@ function Profile() {
         <Header />
         <div className="flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-8 mt-2 w-full">
           <ProfileDetails />
-          <ProfileStats lost={lostItemCount} found={foundItemCount} />
-          <ItemPieChart lostItemCount={lostItemCount} foundItemCount={foundItemCount} />
+          <ProfileStats />
+          <ItemPieChart />
         </div>
         <div className="flex justify-center items-center gap-5 my-5 mt-10">
           <Button variant={variant} disabled={variant === "outline"} onClick={show} className="sm:w-52 md:w-64">

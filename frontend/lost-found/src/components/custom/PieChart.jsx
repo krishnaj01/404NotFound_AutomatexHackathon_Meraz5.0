@@ -1,12 +1,14 @@
+import { useCountContext } from "@/context/CountContext";
 import React from "react";
-import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
 const COLORS = ["#4C1D95", "#A78BFA"];
 
-function ItemPieChart({ lostItemCount, foundItemCount }) {
+function ItemPieChart() {
+  const {lostCount, foundCount} = useCountContext();
   const data = [
-    { name: "Lost Items", value: lostItemCount },
-    { name: "Found Items", value: foundItemCount },
+    { name: "Lost Items", value: lostCount },
+    { name: "Found Items", value: foundCount },
   ];
 
   return (

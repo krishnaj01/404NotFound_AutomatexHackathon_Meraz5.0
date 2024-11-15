@@ -2,7 +2,7 @@
 import { useCountContext } from '@/context/countContext';
 import React from 'react';
 
-function ProfileStats({lost, found}) {
+function ProfileStats() {
   const {lostCount, foundCount} = useCountContext();
   return (
     <div className="bg-white p-6 rounded-lg shadow-xl w-full max-w-xs sm:max-w-sm lg:w-[350px] space-y-6">

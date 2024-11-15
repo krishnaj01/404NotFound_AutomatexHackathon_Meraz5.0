@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { db } from "@/service/firebaseConfig";
@@ -26,6 +26,17 @@ function ProfileCard({ data, onDelete, onEdit, type }) {
       [name]: value,
     });
   };
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const itemDate = new Date(data?.userSelection.date);
+    const timeDiff = currentDate - itemDate; 
+    const daysDiff = timeDiff / (1000 * 3600 * 24);
+
+    if (daysDiff >= 7) {
+      handleDelete(); 
+    }
+  }, [data]);
 
   const handleSaveEdit = async () => {
     try {
