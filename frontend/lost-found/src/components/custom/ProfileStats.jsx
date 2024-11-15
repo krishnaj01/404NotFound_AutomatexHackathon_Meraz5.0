@@ -1,13 +1,15 @@
 // components/ProfileStats.js
+import { useCountContext } from '@/context/countContext';
 import React from 'react';
 
 function ProfileStats({lost, found}) {
+  const {lostCount, foundCount} = useCountContext();
   return (
     <div className="bg-white p-6 rounded-lg shadow-xl w-full max-w-xs sm:max-w-sm lg:w-[350px] space-y-6">
       <h3 className="text-xl font-semibold text-black">Profile Stats</h3>
       <div className='flex justify-start gap-5'>
-      <Stat label="Found" value={found} />
-      <Stat label="Lost" value={lost} />
+      <Stat label="Found" value={foundCount} />
+      <Stat label="Lost" value={lostCount} />
       </div>
     </div>
   );

@@ -61,7 +61,7 @@ const Found = () => {
     } else {
       const prevFoundVal = JSON.parse(localStorage.getItem("found")) || 0;
       const newFoundVal = prevFoundVal + 1;
-      localStorage.setItem("lost", JSON.stringify(newFoundVal));
+      localStorage.setItem("found", JSON.stringify(newFoundVal));
       setLostCount(newFoundVal);
     }
     const formDataToSend = new FormData();
