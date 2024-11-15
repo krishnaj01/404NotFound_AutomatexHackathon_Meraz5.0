@@ -78,7 +78,7 @@ const LandingHeader = () => {
             <a href="/">
               <div className="flex gap-3 items-center cursor-pointer">
                 <img src="/lost-found.jpg" className="h-16 rounded-full" alt="logo" />
-                <h2 className="font-bold text-3xl font-serif">Lost-Found</h2>
+                <h2 className="font-bold text-3xl">Back2You</h2>
               </div>
             </a>
             <Button onClick={() => setOpenDialog(true)}>Sign In</Button>
@@ -141,7 +141,7 @@ const LandingHeader = () => {
                     <div
                       onClick={() => {
                         googleLogout();
-                        localStorage.clear();
+                        localStorage.removeItem("user");
                         window.location.replace("/");
                       }}
                     >
@@ -181,7 +181,7 @@ const LandingHeader = () => {
             <a href="/">
               <div className="flex gap-3 items-center cursor-pointer">
                 <img src="/lost-found.jpg" className="h-16 rounded-full" alt="logo" />
-                <h2 className="font-bold text-3xl font-serif">Lost-Found</h2>
+                <h2 className="font-bold text-3xl">Back2You</h2>
               </div>
             </a>
             <Button onClick={() => setOpenDialog(true)}>Sign In</Button>
@@ -250,7 +250,7 @@ const LandingHeader = () => {
                   <div
                     onClick={() => {
                       googleLogout();
-                      localStorage.clear();
+                      localStorage.removeItem("user");
                       window.location.replace("/");
                     }}
                   >
