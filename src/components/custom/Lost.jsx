@@ -178,7 +178,7 @@ const Lost = () => {
                 <option value="Accessories">Accessories</option>
                 <option value="Books">Books</option>
                 <option value="Bags">Bags</option>
-                <option value="Jewelry">Jewelry</option>
+                <option value="Jewelry">Jewellery</option>
                 <option value="Toys">Toys</option>
                 <option value="Keys">Keys</option>
                 <option value="Sporting Goods">Sporting Goods</option>
