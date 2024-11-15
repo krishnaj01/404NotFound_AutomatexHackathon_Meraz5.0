@@ -1,7 +1,7 @@
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
-const COLORS = ["#0088FE", "#00C49F"];
+const COLORS = ["#4C1D95", "#A78BFA"];
 
 function ItemPieChart({ lostItemCount, foundItemCount }) {
   const data = [
