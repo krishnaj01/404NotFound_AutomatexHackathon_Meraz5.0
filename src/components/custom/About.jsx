@@ -89,7 +89,7 @@ const About = () => {
                         <p className="text-sm italic text-black mb-5">"Fluent in code, with a passion for debugging the complexities of life."</p>
                         <div className="flex justify-center gap-3 text-xl my-3">
                             <a href="mailto:krishnaj@iitbhilai.ac.in"><SiGmail className='hover:text-red-500' /></a>
-                            <a href="https://www.instagram.com/krishna_jhanwar01/"><FaInstagram className='hover:text-purple-500' /></a>
+                            <a href="https://www.instagram.com/krishna.jhanwar01/"><FaInstagram className='hover:text-purple-500' /></a>
                             <a href="https://www.linkedin.com/in/krishna-jhanwar-498022290/"><FaLinkedinIn className='hover:text-blue-600' /></a>
                         </div>
                     </div>
